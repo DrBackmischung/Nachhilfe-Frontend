@@ -27,11 +27,58 @@ declare module "native-base" {
   interface ICustomTheme extends MyThemeType {}
 }
 export default function App() {
+  
+  const theme = extendTheme({
+    colors: {
+      // Add new color
+      primary: {
+        100: '#4E4296'
+      },
+      primary_dark: {
+        100: '#0A0436'
+      },
+      primary_light: {
+        100: '#857BC3'
+      },
+      secondary: {
+        100: '#3A126A'
+      },
+      secondary_dark: {
+        100: '#190234'
+      },
+      secondary_light: {
+        100: '#9775C0'
+      },
+      tertiary: {
+        100: '#133068'
+      },
+      tertiary_dark: {
+        100: '#031334'
+      },
+      tertiary_light: {
+        100: '#758EBE'
+      },
+      white: {
+        100: '#FFFFFF'
+      },
+      grey: {
+        100: '#C0C0C0'
+      },
+      black: {
+        100: '#000000'
+      },
+    },
+    config: {
+      // Changing initialColorMode to 'dark'
+      initialColorMode: 'dark',
+    },
+  });
+
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider theme={theme}>
       <Center
-        _dark={{ bg: "blueGray.900" }}
-        _light={{ bg: "blueGray.50" }}
+        _dark={{ bg: "primary_dark.100" }}
+        _light={{ bg: "primary_light.100" }}
         px={4}
         flex={1}
       >
@@ -49,15 +96,19 @@ export default function App() {
               }}
               px={2}
               py={1}
-              _dark={{ bg: "blueGray.800" }}
-              _light={{ bg: "blueGray.200" }}
+              _dark={{ bg: "primary_dark.100"  }}
+              _light={{ bg: "primary_light.100" }}
             >
               App.js
             </Box>
             <Text>and save to reload.</Text>
           </HStack>
           <Link href="https://docs.nativebase.io" isExternal>
-            <Text color="primary.500" underline fontSize={"xl"}>
+            <Text
+              _dark={{ color: "primary_light.100"  }}
+              _light={{ color: "primary_dark.100" }}
+              underline fontSize={"xl"}
+            >
               Learn NativeBase
             </Text>
           </Link>
