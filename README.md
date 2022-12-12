@@ -1,8 +1,17 @@
 # Nachhilfe-Frontend
 SE III: Frontend mit Flutter/Dart
 
+## Setup
+`yarn install`
+
 ## Android
-`npx react-native run-android`
+`yarn android`
 
 ## Windows
-`npx react-native run-windows`
+`yarn web`
+
+## iOS
+`yarn ios`
+
+## Alle
+`yarn start`
