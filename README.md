@@ -1,5 +1,5 @@
 # Nachhilfe-Frontend
-SE III: Frontend mit Flutter/Dart
+SE III: Frontend mit React Native
 
 ## Setup
 `yarn install`
