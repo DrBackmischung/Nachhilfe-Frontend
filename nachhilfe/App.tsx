@@ -3,14 +3,8 @@ import {
   NativeBaseProvider,
   extendTheme,
 } from "native-base";
-import Home from "./pages/Home";
-import Navigation from "./components/Navigation";
-
-// Define the config
-const config = {
-  useSystemColorMode: false,
-  initialColorMode: "dark",
-};
+import {Root} from "./src/components/RootComponent";
+import config from './nativebase.config';
 
 // extend the theme
 export const theme = extendTheme({ config });
@@ -65,9 +59,8 @@ export default function App() {
   });
 
   return (
-    <NativeBaseProvider theme={theme}>
-      <Navigation></Navigation>
-      <Home></Home>
+    <NativeBaseProvider theme={theme} config={config}>
+      <Root />
     </NativeBaseProvider>
   );
 }
