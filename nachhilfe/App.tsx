@@ -19,10 +19,9 @@ declare module "native-base" {
   interface ICustomTheme extends MyThemeType {}
 }
 export default function App() {
-  
+
   const theme = extendTheme({
     colors: {
-      // Add new color
       primary: {
         100: '#4E4296'
       },
@@ -61,7 +60,6 @@ export default function App() {
       },
     },
     config: {
-      // Changing initialColorMode to 'dark'
       initialColorMode: 'dark',
     },
   });
