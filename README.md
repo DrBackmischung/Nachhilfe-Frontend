@@ -15,3 +15,17 @@ SE III: Frontend mit React Native
 
 ## Alle
 `yarn start`
+
+## Kacheln
+- Login/Registrierung
+- Profil
+- Terminkalender
+- Neuen Termin buchen
+- Chat
+- Chatbot
+- Rechnungen
+- Learning Points
+- Teaching Points
+- Profile Points
+- News/Vorschläge
+- Werbung
