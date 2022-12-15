@@ -101,29 +101,7 @@ export const Layout = ({
 								</Heading>
 							{/* </HStack> */}
 							{/* <Text color={colorMode == 'dark' ? 'white' : 'gray.800'}>v3</Text> */}
-							{title && 
-								<Box  mr={2} ml={6} mt={{base:1, lg:3}}  alignItems="flex-end">
-									<Link
-										href={doclink}
-										isExternal
-										// mt={4}
-										
-										alignItems="center"
-										>
-										<Text bold>Docs</Text>
-										<Icon 
-											as={<EvilIcons name="external-link" size={24} />}
-											_light={{
-												color: 'black'
-											}}
-											_dark={{
-												color: 'white'
-											}}
-											fontWeight={800}
-										/>
-									</Link>	
-								</Box>	
-							}
+							
 					</HStack>
 				</HStack>
 				{children}

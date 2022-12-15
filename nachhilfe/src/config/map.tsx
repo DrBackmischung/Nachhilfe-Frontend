@@ -16,7 +16,6 @@ export const mapping = {
 	Profil: {
 		title: 'Profil',
 		description: '',
-		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
