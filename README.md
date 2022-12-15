@@ -29,3 +29,5 @@ SE III: Frontend mit React Native
 - Profile Points
 - News/Vorschläge
 - Werbung
+- Learning Fortschritt: Minecraft
+- Learning Fortschritt: Mathe
