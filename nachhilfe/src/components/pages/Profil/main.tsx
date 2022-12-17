@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert, Box, Button, Center, FormControl, Heading, HStack, Input, Link, Stack, VStack } from 'native-base';
 import { Text } from 'react-native-svg';
 
-const Example = () => {
+export const Example = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,7 +15,7 @@ const Example = () => {
         <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{
         color: "warmGray.50"
       }}>
-          Willkommen :->
+          Willkommen!
         </Heading>
         <Heading mt="1" _dark={{
         color: "warmGray.200"
