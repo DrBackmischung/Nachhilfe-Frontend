@@ -1,14 +1,31 @@
 import React, { useState } from 'react';
 import { Alert, Box, Button, Center, FormControl, Heading, HStack, Input, Link, Stack, VStack } from 'native-base';
 import { Text } from 'react-native-svg';
+import { APIUrl } from '../../../../constants';
+import { useQuery } from "react-query";
+import { changeUserName } from '../../../redux/actions/user';
+import { bindActionCreators } from 'redux';
 
 export const Example = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async () => {
-    
-  };
+  const mapStateToProps = state => ({
+    name: state.name,
+  });
+
+  const ActionCreators = Object.assign(
+    {},
+    changeUserName,
+  );
+  const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(ActionCreators, dispatch),
+  });
+
+  const url = `${APIUrl}/users/${user}`;
+  const data = useQuery("Profile", () =>
+    fetch(url).then((res) => res.json())
+  );
 
   return <Center w="100%">
       <Box safeArea p="2" py="8" w="90%" maxW="290">

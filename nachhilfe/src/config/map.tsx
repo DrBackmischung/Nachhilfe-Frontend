@@ -29,10 +29,10 @@ export const mapping = {
 		title: 'Login',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Login'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
+				component: require('../components/pages/Login/main'),
 				title: 'Profil',
 				description: '',
 			},
