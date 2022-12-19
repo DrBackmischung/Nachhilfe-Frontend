@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert, Box, Button, Center, FormControl, Heading, HStack, Input, Link, Stack, VStack } from 'native-base';
 import { Text } from 'react-native-svg';
 import { APIUrl } from '../../../../constants';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const Example = () => {
   const [userName, setUserName] = useState("");
@@ -85,7 +85,7 @@ export const Example = () => {
               fontWeight="medium"
               size="xs"
             >
-              Eingeloggt!
+              Eingeloggt als {currentUser}!
             </Heading>
           </>
         ) : (
@@ -157,7 +157,7 @@ export const Example = () => {
             onPress={() => {handleSubmit()}}
           >
             Einloggen
-          </Button>
+          </Button> 
         </VStack>
       </Box>
     </Center>;
