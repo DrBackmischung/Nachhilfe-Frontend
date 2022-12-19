@@ -57,10 +57,12 @@ export const Example = () => {
           'user',
           `${data[0].id}`,
         );
+        console.log(data[0].id)
         await AsyncStorage.setItem(
           'name',
           `${data[0].userName}`,
         );
+        console.log(data[0].userName)
       } catch (error) {
         setIsError(true);
         setErrorMsg("Server Fehler, bitte erneut versuchen")

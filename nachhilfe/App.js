@@ -11,9 +11,9 @@ export default function App() {
 
 	return (
 		<QueryClientProvider client={queryClient}>
-				<NativeBaseProvider theme={BaseTheme} config={config}>
-					<Root />
-				</NativeBaseProvider>
+			<NativeBaseProvider theme={BaseTheme} config={config}>
+				<Root />
+			</NativeBaseProvider>
 		</QueryClientProvider>
 	);
 }
