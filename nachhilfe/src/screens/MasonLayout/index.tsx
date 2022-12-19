@@ -124,7 +124,7 @@ export function MasonLayout({
 						_heading={{
 							color: 'lime.100',
 						}}
-						// colors={['red.400', 'amber.400']}
+						//colors={['red.400', 'amber.400']}
 					/>
 					<StoryBook
 						navigation={navigation}
