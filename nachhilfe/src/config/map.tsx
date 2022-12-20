@@ -33,7 +33,12 @@ export const mapping = {
 		components: [
 			{
 				component: require('../components/pages/Login/main'),
-				title: 'Profil',
+				title: 'Login',
+				description: '',
+			},
+			{
+				component: require('../components/pages/Login/register'),
+				title: 'Registrieren',
 				description: '',
 			},
 		],
@@ -45,8 +50,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Kalender/main'),
+				title: 'Kalender',
 				description: '',
 			},
 		],
@@ -58,8 +63,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Buchung/main'),
+				title: 'Buchung',
 				description: '',
 			},
 		],
@@ -71,8 +76,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Chat/main'),
+				title: 'Chat',
 				description: '',
 			},
 		],
@@ -97,8 +102,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Rechnungen/main'),
+				title: 'Rechnungen',
 				description: '',
 			},
 		],
@@ -110,8 +115,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Points/learning'),
+				title: 'Learning Points',
 				description: '',
 			},
 		],
@@ -123,8 +128,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Points/teaching'),
+				title: 'Teaching Points',
 				description: '',
 			},
 		],
@@ -136,8 +141,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Points/profile'),
+				title: 'Profile Points',
 				description: '',
 			},
 		],
@@ -149,8 +154,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/News/main'),
+				title: 'News',
 				description: '',
 			},
 		],
@@ -162,8 +167,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Werbung/main'),
+				title: 'Werbung',
 				description: '',
 			},
 		],
@@ -175,8 +180,8 @@ export const mapping = {
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
+				component: require('../components/pages/Points/minecraft'),
+				title: 'Minecraft',
 				description: '',
 			},
 		],
