@@ -36,9 +36,7 @@ export function StoryBook({
 			<Pressable
 				flex={1}
 				onPress={() =>
-					navigation.navigate('Component | NativeBase', {
-						name: name,
-					})
+					console.log(name)
 				}
 				// minH={32}
 				// bg={useColorModeValue('white', 'blueGray.900')}

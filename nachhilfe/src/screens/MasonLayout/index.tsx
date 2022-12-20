@@ -140,31 +140,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
-						name="LearningPoints"
-						minH={32}
-						_box={{
-							lightGrad: ['cyan.400', 'teal.200'],
-							darkGrad: ['cyan.600', 'teal.300'],
-						}}
-						_heading={{
-							color: 'amber.100',
-						}}
-					/>
-					<StoryBook
-						navigation={navigation}
-						name="TeachingPoints"
-						minH={40}
-						_box={{
-							lightGrad: ['orange.400', 'amber.200'],
-							darkGrad: ['orange.600', 'amber.300'],
-						}}
-						_heading={{
-							color: 'amber.100',
-						}}
-					/>
-					<StoryBook
-						navigation={navigation}
-						name="ProfilePoints"
+						name="Stats"
 						minH={32}
 						_box={{
 							lightGrad: ['cyan.400', 'teal.200'],
@@ -190,19 +166,6 @@ export function MasonLayout({
 						navigation={navigation}
 						name="Werbung"
 						minH={40}
-						_box={{
-							lightGrad: ['orange.400', 'amber.200'],
-							darkGrad: ['orange.600', 'amber.300'],
-						}}
-						_heading={{
-							color: 'amber.100',
-						}}
-					/>
-
-					<StoryBook
-						navigation={navigation}
-						name="Minecraft"
-						minH={48}
 						_box={{
 							lightGrad: ['orange.400', 'amber.200'],
 							darkGrad: ['orange.600', 'amber.300'],

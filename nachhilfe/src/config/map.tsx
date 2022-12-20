@@ -23,6 +23,11 @@ export const mapping = {
 				title: 'Profil',
 				description: '',
 			},
+			{
+				component: require('../components/pages/Profil/skills'),
+				title: 'Skills',
+				description: '',
+			},
 		],
 	},
 	Login: {
@@ -108,8 +113,8 @@ export const mapping = {
 			},
 		],
 	},
-	LearningPoints: {
-		title: 'LearningPoints',
+	Stats: {
+		title: 'Stats',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Profil'),
@@ -119,30 +124,19 @@ export const mapping = {
 				title: 'Learning Points',
 				description: '',
 			},
-		],
-	},
-	TeachingPoints: {
-		title: 'TeachingPoints',
-		description: '',
-		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
-		components: [
 			{
 				component: require('../components/pages/Points/teaching'),
 				title: 'Teaching Points',
 				description: '',
 			},
-		],
-	},
-	ProfilePoints: {
-		title: 'ProfilePoints',
-		description: '',
-		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
-		components: [
 			{
 				component: require('../components/pages/Points/profile'),
 				title: 'Profile Points',
+				description: '',
+			},
+			{
+				component: require('../components/pages/Points/minecraft'),
+				title: 'Minecraft',
 				description: '',
 			},
 		],
@@ -169,19 +163,6 @@ export const mapping = {
 			{
 				component: require('../components/pages/Werbung/main'),
 				title: 'Werbung',
-				description: '',
-			},
-		],
-	},
-	Minecraft: {
-		title: 'Minecraft',
-		description: '',
-		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
-		components: [
-			{
-				component: require('../components/pages/Points/minecraft'),
-				title: 'Minecraft',
 				description: '',
 			},
 		],

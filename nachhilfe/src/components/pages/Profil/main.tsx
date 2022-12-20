@@ -13,7 +13,6 @@ export const Example = () => {
 
   useEffect(() => {
     AsyncStorage.getItem('user').then((user) => {
-      console.log("useEffect "+user)
       setCurrentUser(user)
       setIsLoggedIn(true)
     });
@@ -44,51 +43,54 @@ export const Example = () => {
       setIsError(false);
       setErrorMsg("");
       const data: any = await response.json();
-      console.log("===================");
       setUserData(data[0]);
-      console.log(data[0])
     }
   };
 
-  return <Center w="100%">
-      <Box safeArea p="2" py="8" w="90%">
-          {userData === undefined ? (
-            <Spinner color="blue.500" />
-          ) : (
-            <>
-                <VStack justifyContent="center">
-                  <Avatar
-                      alignSelf="right"
-                      size="lg"
-                      _light={{ bg: 'blue.300' }}
-                      _dark={{ bg: 'blue.400' }}
-                      _text={{
-                          opacity: 0,
-                      }}
-                  >
-                    NB
-                  <Avatar.Badge
-                      _light={{ bg: 'green.300' }}
-                      _dark={{ bg: 'green.400' }}
-                      borderWidth={0}
-                      boxSize={5}
-                  />
-                  </Avatar>
-                  <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                    {`Willkommen, ${userData.userName}`}!
-                  </Heading>
-                  <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                    Vorname: {userData.firstName}
-                  </Heading>
-                  <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                    Nachname: {userData.lastName}
-                  </Heading>
-                  <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                    Adresse: {userData.street} {userData.houseNr} in {userData.zipCode} {userData.city}
-                  </Heading>
-                </VStack>
-              </>
-          )}
-      </Box>
-    </Center>;
+  return (
+    <>
+      {userData === undefined ? (
+        <Heading>Profil</Heading>
+      ) : (
+        <Heading>Profil von {userData.userName}</Heading>
+      )}
+      <Center w="100%">
+        <Box safeArea p="2" py="8" w="90%">
+            {userData === undefined ? (
+              <Spinner color="blue.500" />
+            ) : (
+              <>
+                  <VStack justifyContent="center">
+                    <Avatar
+                        alignSelf="right"
+                        size="lg"
+                        _light={{ bg: 'blue.300' }}
+                        _dark={{ bg: 'blue.400' }}
+                        _text={{
+                            opacity: 0,
+                        }}
+                    >
+                      NB
+                    <Avatar.Badge
+                        _light={{ bg: 'green.300' }}
+                        _dark={{ bg: 'green.400' }}
+                        borderWidth={0}
+                        boxSize={5}
+                    />
+                    </Avatar>
+                    <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                      Vorname: {userData.firstName}
+                    </Heading>
+                    <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                      Nachname: {userData.lastName}
+                    </Heading>
+                    <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                      Adresse: {userData.street} {userData.houseNr} in {userData.zipCode} {userData.city}
+                    </Heading>
+                  </VStack>
+                </>
+            )}
+        </Box>
+      </Center>
+    </>);
 };
