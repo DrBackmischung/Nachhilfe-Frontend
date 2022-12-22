@@ -62,11 +62,7 @@ export const SkillsDialog = (props: any) => {
                     <>
                     {skillData === undefined ? (
                         <Spinner color="blue.500" />
-                    ) : (skillData.length === 0 ? (
-                        <Heading>Keine Skills gefunden</Heading>
-                        ) : (
-                        <Heading>Skills:</Heading>
-                        ))
+                    ) : (<></>)
                     }
                     
                     {skillData === undefined || skillData.length === 0 ? (<></>) :

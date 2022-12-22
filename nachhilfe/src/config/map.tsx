@@ -62,14 +62,14 @@ export const mapping = {
 		],
 	},
 	Buchung: {
-		title: 'Buchung',
+		title: 'Nachhilfestunde buchen',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Profil'),
 		components: [
 			{
 				component: require('../components/pages/Buchung/main'),
-				title: 'Buchung',
+				title: 'Nachhilfestunde buchen',
 				description: '',
 			},
 		],
