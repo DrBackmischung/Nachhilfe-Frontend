@@ -28,26 +28,39 @@ export const SkillverwaltungDialog = (props: any) => {
     }, [isOpen, currentUser])
 
     const url = `${APIUrl}/skills`;
+    const urlAdd = `${APIUrl}/users/${currentUser}/${skill}`;
   
     const setupData = async () => {
         const requestOptions = {
-          method: "GET",
-          headers: {"Content-Type": "application/json"}
+            method: "GET",
+            headers: {"Content-Type": "application/json"}
         };
         const response2 = await fetch(url, requestOptions)
         if(response2.status == 500) {
-          setIsError(true);
-          setErrorMsg("Server Fehler, bitte erneut versuchen")
+            setIsError(true);
+            setErrorMsg("Server Fehler, bitte erneut versuchen")
         }
         if(response2.ok) {
-          setIsLoggedIn(true);
-          setIsError(false);
-          setErrorMsg("");
-          const data: any = await response2.json();
-          setSkillList(data);
-          console.log(data)
+            setIsLoggedIn(true);
+            setIsError(false);
+            setErrorMsg("");
+            const data: any = await response2.json();
+            setSkillList(data);
+            console.log(data)
         }
     };
+
+    const addSkill = async () => {     
+        const requestOptions = {
+            method: "POST",
+            headers: {"Content-Type": "application/json"}
+        };
+        const response3 = await fetch(urlAdd, requestOptions)
+        if(response3.ok) {
+            setIsError(false);
+            setErrorMsg("");
+        }
+    }
     
     return <>
         <Modal isOpen={isOpen} onClose={() => close()} avoidKeyboard>
@@ -57,7 +70,7 @@ export const SkillverwaltungDialog = (props: any) => {
             <Modal.Body>
                 <Center w="100%">
                     <Box maxW="300">
-                        <Select selectedValue={skill} minWidth="200" accessibilityLabel="Choose Service" placeholder="Choose Service" _selectedItem={{
+                        <Select selectedValue={skill} minWidth="200" accessibilityLabel="Skill auswählen..." placeholder="Skill auswählen..." _selectedItem={{
                             bg: "teal.600",
                             endIcon: <CheckIcon size="5" />
                         }} mt={1} onValueChange={itemValue => setSkill(itemValue)}>
@@ -71,10 +84,15 @@ export const SkillverwaltungDialog = (props: any) => {
                 </Center>
             </Modal.Body>
             <Modal.Footer>
+                <Button flex="2" marginRight="5" onPress={() => {
+                    addSkill()
+                }}>
+                    Hinzufügen
+                </Button>
                 <Button flex="1" onPress={() => {
                     close(false);
                 }}>
-                Zurück
+                    Zurück
                 </Button>
             </Modal.Footer>
             </Modal.Content>
