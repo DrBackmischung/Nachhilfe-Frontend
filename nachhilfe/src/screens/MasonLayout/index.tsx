@@ -28,6 +28,7 @@ import { ProfilDialog } from '../../components/pages/Profil/dialog';
 import { LoginDialog } from '../../components/pages/Login/dialog';
 import { SkillsDialog } from '../../components/pages/Skills/dialog';
 import { SkillverwaltungDialog } from '../../components/pages/Skillverwaltung/dialog';
+import { StundenplanerDialog } from '../../components/pages/Stundenplaner/dialog';
 
 export function MasonLayout({
 	navigation,
@@ -38,6 +39,7 @@ export function MasonLayout({
     const [isOpenLogin, setOpenLogin] = useState(false);
     const [isOpenSkills, setOpenSkills] = useState(false);
     const [isOpenSkillVerwaltung, setOpenSkillVerwaltung] = useState(false);
+    const [isOpenStundenplaner, setOpenStundenplaner] = useState(false);
 
 	return (
 		<Layout>
@@ -45,6 +47,7 @@ export function MasonLayout({
 			<LoginDialog isOpen={isOpenLogin} close={() => setOpenLogin(false)} />
 			<SkillsDialog isOpen={isOpenSkills} close={() => setOpenSkills(false)} />
 			<SkillverwaltungDialog isOpen={isOpenSkillVerwaltung} close={() => setOpenSkillVerwaltung(false)} />
+			<StundenplanerDialog isOpen={isOpenStundenplaner} close={() => setOpenStundenplaner(false)} />
 			<ScrollView
 				contentContainerStyle={{ width: '100%' }}
 				showsVerticalScrollIndicator={false}
@@ -107,6 +110,19 @@ export function MasonLayout({
 						navigation={navigation}
 						open={() => setOpenSkillVerwaltung(true)}
 						name="Skillverwaltung"
+						minH={40}
+						_box={{
+							lightGrad: ['orange.400', 'amber.200'],
+							darkGrad: ['orange.600', 'amber.300'],
+						}}
+						_heading={{
+							color: 'amber.100',
+						}}
+					/>
+					<StoryBook
+						navigation={navigation}
+						open={() => setOpenStundenplaner(true)}
+						name="Stundenplaner"
 						minH={40}
 						_box={{
 							lightGrad: ['orange.400', 'amber.200'],
