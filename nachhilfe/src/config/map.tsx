@@ -126,6 +126,19 @@ export const mapping = {
 			},
 		],
 	},
+	Skillverwaltung: {
+		title: 'Skillverwaltung',
+		description: '',
+		doclink: 'https://docs.nativebase.io/actionSheet',
+		basic: require('../components/tiles/Profil'),
+		components: [
+			{
+				component: require('../components/pages/Rechnungen/main'),
+				title: 'Skills',
+				description: '',
+			},
+		],
+	},
 	Stats: {
 		title: 'Stats',
 		description: '',
