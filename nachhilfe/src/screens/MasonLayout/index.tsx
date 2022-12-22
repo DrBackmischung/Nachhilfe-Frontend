@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
 import {
 	Box,
@@ -24,14 +24,24 @@ import { Logo } from '../../components/Logo';
 import { StoryBook } from '../../components/StoryBook';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Layout } from '../../components/Layout';
+import { ProfilDialog } from '../../components/pages/Profil/dialog';
+import { LoginDialog } from '../../components/pages/Login/dialog';
+import { SkillsDialog } from '../../components/pages/Skills/dialog';
 
 export function MasonLayout({
 	navigation,
 }: {
 	navigation: StackNavigationProp<any>;
 }) {
+    const [isOpenProfil, setOpenProfil] = useState(false);
+    const [isOpenLogin, setOpenLogin] = useState(false);
+    const [isOpenSkills, setOpenSkills] = useState(false);
+
 	return (
 		<Layout>
+			<ProfilDialog isOpen={isOpenProfil} close={() => setOpenProfil(false)} />
+			<LoginDialog isOpen={isOpenLogin} close={() => setOpenLogin(false)} />
+			<SkillsDialog isOpen={isOpenSkills} close={() => setOpenSkills(false)} />
 			<ScrollView
 				contentContainerStyle={{ width: '100%' }}
 				showsVerticalScrollIndicator={false}
@@ -53,6 +63,7 @@ export function MasonLayout({
 				>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="Profil"
 						minH={32}
 						_box={{
@@ -65,6 +76,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenLogin(true)}
 						name="Login"
 						minH={32}
 						_box={{
@@ -77,6 +89,20 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenSkills(true)}
+						name="Skills"
+						minH={40}
+						_box={{
+							lightGrad: ['orange.400', 'amber.200'],
+							darkGrad: ['orange.600', 'amber.300'],
+						}}
+						_heading={{
+							color: 'amber.100',
+						}}
+					/>
+					<StoryBook
+						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="Kalender"
 						minH={40}
 						_box={{
@@ -90,6 +116,7 @@ export function MasonLayout({
 
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="Buchung"
 						minH={48}
 						_box={{
@@ -102,6 +129,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="Chat"
 						// colors={['green.700', 'lime.200']}
 						minH={48}
@@ -115,6 +143,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="Chatbot"
 						minH={32}
 						_box={{
@@ -128,6 +157,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="Rechnungen"
 						minH={32}
 						_box={{
@@ -140,6 +170,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="Stats"
 						minH={32}
 						_box={{
@@ -152,6 +183,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="News"
 						minH={32}
 						_box={{
@@ -164,6 +196,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
 						name="Werbung"
 						minH={40}
 						_box={{

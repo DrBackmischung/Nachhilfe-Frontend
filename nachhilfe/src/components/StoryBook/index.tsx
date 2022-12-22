@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Box,
 	Center,
@@ -7,9 +7,11 @@ import {
 	useColorModeValue,
 } from 'native-base';
 import { mapping } from '../../config/map';
+import { ProfilDialog } from '../pages/Profil/dialog';
 
 export function StoryBook({
 	navigation,
+	open,
 	name,
 	_box: { lightGrad, darkGrad, ..._box },
 	_heading,
@@ -20,6 +22,7 @@ export function StoryBook({
 		'gray.700',
 		'white',
 	];
+
 
 	return (
 		<Box
@@ -35,9 +38,10 @@ export function StoryBook({
 		>
 			<Pressable
 				flex={1}
-				onPress={() =>
+				onPress={() => {
 					console.log(name)
-				}
+					open()
+				}}
 				// minH={32}
 				// bg={useColorModeValue('white', 'blueGray.900')}
 			>
