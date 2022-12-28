@@ -157,7 +157,7 @@ export const mapping = {
 		title: 'Stats',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Stats'),
 		components: [
 			/*{
 				component: require('../components/pages/Points/learning'),
