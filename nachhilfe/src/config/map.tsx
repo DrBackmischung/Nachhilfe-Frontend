@@ -28,6 +28,7 @@ export const mapping = {
 				title: 'Skills',
 				description: '',
 			},
+
 		],
 	},
 	Login: {
@@ -158,7 +159,7 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Profil'),
 		components: [
-			{
+			/*{
 				component: require('../components/pages/Points/learning'),
 				title: 'Learning Points',
 				description: '',
@@ -177,7 +178,7 @@ export const mapping = {
 				component: require('../components/pages/Points/minecraft'),
 				title: 'Minecraft',
 				description: '',
-			},
+			},*/
 		],
 	},
 	News: {

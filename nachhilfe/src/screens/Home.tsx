@@ -127,6 +127,8 @@ export function Home({ navigation }: { navigation: StackNavigationProp<any> }) {
     },
   ];
 
+  
+
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box bg={colorMode === 'dark' ? 'black' : 'white'} pt={12}>
