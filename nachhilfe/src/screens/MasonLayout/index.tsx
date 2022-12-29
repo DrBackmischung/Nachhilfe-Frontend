@@ -32,7 +32,7 @@ import { StundenplanerDialog } from '../../components/pages/Stundenplaner/dialog
 import { StatsDialog } from '../../components/pages/Stats/dialog';
 
 export function MasonLayout({
-	
+
 	navigation,
 }: {
 	navigation: StackNavigationProp<any>;
@@ -43,10 +43,10 @@ export function MasonLayout({
     const [isOpenSkillVerwaltung, setOpenSkillVerwaltung] = useState(false);
     const [isOpenStundenplaner, setOpenStundenplaner] = useState(false);
 	const [isOpenStats, setOpenStats] = useState(false);
-	
-(function(w, d) { w.CollectId = "63a1d8d49eed8935fca50263"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);
+
+	(function(w, d) { w.CollectId = "63a1d8d49eed8935fca50263"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);
 	return (
-		
+
 		<Layout>
 			<ProfilDialog isOpen={isOpenProfil} close={() => setOpenProfil(false)} />
 			<LoginDialog isOpen={isOpenLogin} close={() => setOpenLogin(false)} />
