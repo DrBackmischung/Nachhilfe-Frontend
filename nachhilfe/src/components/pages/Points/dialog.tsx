@@ -27,6 +27,7 @@ export const PointsDialog = (props: any) => {
 
     const url = `${APIUrl}/users/${currentUser}/points`;
 
+
 	const setupData = async () => {
         const requestOptions = {
             method: "GET",

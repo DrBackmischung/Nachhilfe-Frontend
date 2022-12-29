@@ -134,7 +134,7 @@ export function Home({ navigation }: { navigation: StackNavigationProp<any> }) {
     <Box bg={colorMode === 'dark' ? 'black' : 'white'} pt={12}>
       <ScrollView contentContainerStyle={{ width: '100%' }}>
         <Heading p={3} mx={2}>
-          NativeBase@3.0.0
+          Nachhilfe-Vermittlung Loco
         </Heading>
         <Divider opacity={colorMode == 'dark' ? '0.4' : '1'} />
         <HStack alignItems="center" space={6} py={4} px={3} mx={2}>

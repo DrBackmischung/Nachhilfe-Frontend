@@ -7,10 +7,10 @@ export const Example = () => {
             <Avatar
                 alignSelf="center"
                 size="xl"
-                _light={{ bg: 'blue.300' }}
-                _dark={{ bg: 'blue.400' }}
+                _light={{ bg: 'red.300' }}
+                _dark={{ bg: 'red.400' }}
                 _text={{ opacity: 30 }}
-                source={{ uri: "https://static.vecteezy.com/system/resources/previews/005/568/820/original/ranking-factor-icon-in-trendy-long-shadow-style-isolated-on-soft-blue-background-free-vector.jpg" }}
+                source={{ uri: "https://thumbs.dreamstime.com/b/red-human-brain-icon-stock-vector-red-human-brain-icon-vector-117693464.jpg" }}
             >
               
             </Avatar>

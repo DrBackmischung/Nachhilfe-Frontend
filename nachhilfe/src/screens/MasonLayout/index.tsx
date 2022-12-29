@@ -69,7 +69,7 @@ export function MasonLayout({
 					_hStack={{
 						space: 4,
 						mb: 4,
-						pt: '70px',
+						pt: '150px',
 					}}
 					_vStack={{ space: 4 }}
 				>
@@ -77,7 +77,7 @@ export function MasonLayout({
 						navigation={navigation}
 						open={() => setOpenProfil(true)}
 						name="Profil"
-						minH={32}
+						minH={40}
 						_box={{
 							lightGrad: ['cyan.400', 'teal.200'],
 							darkGrad: ['cyan.600', 'teal.300'],
@@ -86,17 +86,32 @@ export function MasonLayout({
 							color: 'amber.100',
 						}}
 					/>
+
 					<StoryBook
 						navigation={navigation}
 						open={() => setOpenLogin(true)}
 						name="Login"
-						minH={32}
+						minH={40}
 						_box={{
-							lightGrad: ['cyan.400', 'teal.200'],
-							darkGrad: ['cyan.600', 'teal.300'],
+							lightGrad: ['blue.800', 'lightBlue.300'],
+							darkGrad: ['blue.900', 'lightBlue.500'],
 						}}
 						_heading={{
 							color: 'amber.100',
+						}}
+					/>
+
+					<StoryBook
+						navigation={navigation}
+						open={() => setOpenSkillVerwaltung(true)}
+						name="Skillverwaltung"
+						minH={30}
+						_box={{
+							lightGrad: ['violet.800', 'lightBlue.300'],
+							darkGrad: ['violet.900', 'lightBlue.500'],
+						}}
+						_heading={{
+							color: 'lightBlue.100',
 						}}
 					/>
 					<StoryBook
@@ -105,34 +120,23 @@ export function MasonLayout({
 						name="Skills"
 						minH={40}
 						_box={{
-							lightGrad: ['orange.400', 'amber.200'],
+							lightGrad: ['red.400', 'amber.200'],
 							darkGrad: ['orange.600', 'amber.300'],
 						}}
 						_heading={{
 							color: 'amber.100',
 						}}
 					/>
-					<StoryBook
-						navigation={navigation}
-						open={() => setOpenSkillVerwaltung(true)}
-						name="Skillverwaltung"
-						minH={40}
-						_box={{
-							lightGrad: ['orange.400', 'amber.200'],
-							darkGrad: ['orange.600', 'amber.300'],
-						}}
-						_heading={{
-							color: 'amber.100',
-						}}
-					/>
+					
+
 					<StoryBook
 						navigation={navigation}
 						open={() => setOpenStundenplaner(true)}
 						name="Stundenplaner"
 						minH={40}
 						_box={{
-							lightGrad: ['orange.400', 'amber.200'],
-							darkGrad: ['orange.600', 'amber.300'],
+							lightGrad: ['cyan.400', 'teal.200'],
+							darkGrad: ['cyan.600', 'teal.300'],
 						}}
 						_heading={{
 							color: 'amber.100',
@@ -179,20 +183,7 @@ export function MasonLayout({
 							color: 'lightBlue.100',
 						}}
 					/>
-					<StoryBook
-						navigation={navigation}
-						open={() => setOpenProfil(true)}
-						name="Chatbot"
-						minH={32}
-						_box={{
-							lightGrad: ['emerald.400', 'lime.200'],
-							darkGrad: ['emerald.600', 'lime.300'],
-						}}
-						_heading={{
-							color: 'lime.100',
-						}}
-						//colors={['red.400', 'amber.400']}
-					/>
+				
 					<StoryBook
 						navigation={navigation}
 						open={() => setOpenProfil(true)}
@@ -210,10 +201,10 @@ export function MasonLayout({
 						navigation={navigation}
 						open={() => setOpenProfil(true)}
 						name="Chat"
-						minH={32}
+						minH={45}
 						_box={{
-							lightGrad: ['cyan.400', 'teal.200'],
-							darkGrad: ['cyan.600', 'teal.300'],
+							lightGrad: ['orange.400', 'amber.200'],
+							darkGrad: ['orange.600', 'amber.300'],
 						}}
 						_heading={{
 							color: 'amber.100',

@@ -3,6 +3,8 @@ import { Alert, Avatar, Box, Button, Center, CheckIcon, FormControl, Heading, HS
 import { Line, Text } from 'react-native-svg';
 import { APIUrl } from '../../../../constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { event } from 'react-native-reanimated';
+
 
 export const StatsDialog = (props: any) => {
     const {isOpen, close} = props
@@ -10,7 +12,7 @@ export const StatsDialog = (props: any) => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isError, setIsError] = useState(false);
     const [errorMsg, setErrorMsg] = useState("Server Fehler, bitte erneut versuchen.");
-    const [learningPoints, setLearingPoints] = useState(0.0);
+    const [learningPoints, setLearningPoints] = useState(0.0);
     const [teachingPoints, setTeachingPoints] = useState(0.0);
     const [profilePoints, setProfilePoints] = useState(0.0);
 
@@ -45,22 +47,49 @@ export const StatsDialog = (props: any) => {
             setIsError(false);
             setErrorMsg("");
             const data: any = await response.json();
-            setLearingPoints(data);
+            setLearningPoints(data);
             setProfilePoints(data);
             setTeachingPoints(data);
             console.log(data)
         }
     };
-    
+        /*const handleLearningPoints = async () => {
+        const requestOptions = {
+            method: "GET",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                learningPoints
+            }),}}
+    const handleProfilePoints = async () => {
+            const requestOptions = {
+                method: "GET",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    profilePoints
+                 }),}}
+    const handleTeachingPoints = async () => {
+            const requestOptions = {
+                method: "GET",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    teachingPoints
+                        }),*/
+        
     return <>
         <Modal isOpen={isOpen} onClose={() => close()} avoidKeyboard>
             <Modal.Content>
             <Modal.CloseButton />
             <Modal.Header>Stats</Modal.Header>
             <Modal.Body>
-                <Center w="100%">
-                    <Box safeArea p="2" py="8" w="90%">
-                        <>
+            <Center w="100%">
+            <Heading size="md" fontWeight="600" color="coolGray.800" _dark={{
+        color: "warmGray.50"
+      }}>
+          Hier siehst du deine Statistiken!
+        </Heading>
+                 <>
+
+            <Box safeArea p="1" py="8" w="90%"></Box>
                             <VStack justifyContent="center">
                                 <Center>
                                 <Avatar
@@ -69,53 +98,87 @@ export const StatsDialog = (props: any) => {
                                     _light={{ bg: 'blue.300' }}
                                     _dark={{ bg: 'blue.400' }}
                                     _text={{
-                                        opacity: 0,
+                                        opacity: 100,
                                     }}
                                 >
-                                NB
+                                    SA
+                               
                                 <Avatar.Badge
                                     _light={{ bg: 'green.300' }}
                                     _dark={{ bg: 'green.400' }}
-                                    borderWidth={5}
-                                    boxSize={5}
+                                    borderWidth={2}
+                                    boxSize={6}
                                 />
                                 </Avatar>
-                                <Box safeArea p="2" py="8" w="90%"></Box>
-                                <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                                <Box safeArea p="1" py="4" w="90%"></Box>
+                                <Heading size="md" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
                                 Teaching points: 
+                                </Heading><Heading size="sm" fontWeight="200" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                                Hierzu fallen Punkte, bei denen du anderen Schülern Unterricht gegeben hast   lorem ipsum                          
                                 </Heading>
-                                <Box safeArea p="1" py="8" w="90%"></Box>
-                                <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                                Learning points:                               
+                                <Box safeArea p="1" py="2" w="90%"></Box>
+                                <Avatar
+                                marginRight="20"
+                                size="md"
+                                _light={{ bg: 'blue.300' }}
+                                _dark={{ bg: 'blue.400' }}
+                                _text={{ opacity: 30 }}
+                                source={{ uri: "https://www.iconbunny.com/icons/media/catalog/product/1/2/122.9-teacher-ii-icon-iconbunny.jpg" }}
+                                >
+                                </Avatar>
+                                <Box safeArea p="1" py="4" w="90%"></Box>
+                                <Heading size="md" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                                Learning points:                             
+                                </Heading>  
+                                <Heading size="sm" fontWeight="200" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                                Hierzu fallen Punkte, bei denen du anderen Schülern Unterricht gegeben hast                             
                                 </Heading>
-                                <Box safeArea p="1" py="8" w="90%"></Box>
-                                <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                                Overall points:
+                                 <Box safeArea p="1" py="2" w="90%"></Box>
+                                <Avatar
+                                marginRight="20"
+                                size="md"
+                                _light={{ bg: 'blue.300' }}
+                                _dark={{ bg: 'blue.400' }}
+                                _text={{ opacity: 30 }}
+                                source={{ uri: "https://cdn1.iconfinder.com/data/icons/rounded-icons-for-it/512/student-phd-professor-hat-man-512.png" }}
+                                >
+                                </Avatar>
+                                <Box safeArea p="1" py="4" w="90%"></Box>
+                                <Heading size="md" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                                Profile points: 
                                 </Heading>
+                                <Heading size="sm" fontWeight="200" color="darkGray.800" _dark={{color: "warmGray.50"}}>
+                                Hierzu fallen Punkte, bei denen du anderen Schülern Unterricht gegeben hast                             
+                                </Heading><Box safeArea p="1" py="2" w="90%"></Box>
+                                <Avatar
+                                marginRight="20"
+                                size="md"
+                                _light={{ bg: 'blue.300' }}
+                                _dark={{ bg: 'blue.400' }}
+                                _text={{ opacity: 30 }}
+                                source={{ uri: "https://www.clipartmax.com/png/middle/204-2045301_education-icon-education-logo-png-blue.png" }}
+                                >
+                                </Avatar>
                                 <Box safeArea p="1" py="8" w="90%"></Box>
-                                </Center>
-                                <Box safeArea p="1" py="8" w="90%"></Box>
-                                <Button flex="1" onPress={() => {
-                    close(false);
-                }}>
-                             
-                                Werde besser und buche die nächste Stunde!
-                                </Button>
-                                
+                                </Center>                            
                             </VStack>
                             </>
-                       
-                    </Box>
-                </Center>
-            </Modal.Body>
+                           
+                             </Center>
+                     </Modal.Body>
             <Modal.Footer>
-                <Button flex="1" onPress={() => {
-                    close(false);
+            <Button flex="2" marginRight="5" onPress={() => {
+                    //verlinkung zur Buchung
                 }}>
-                Zurück
+                    Neuen Termin buchen um besser zu werden
                 </Button>
+                <Button flex="1" onPress={() => {
+                    close()
+                }}>
+                    Zurück
+                </Button> 
             </Modal.Footer>
             </Modal.Content>
         </Modal>
     </>
-}
+    }
