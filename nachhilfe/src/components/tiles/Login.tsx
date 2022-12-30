@@ -4,8 +4,8 @@ import { Avatar, VStack, Box, Input } from 'native-base';
 export const Example = () => {
 	return (
         <>
-            <Input isDisabled={true} m={3} placeholder="Nadine Nachhilfe"/>
-            <Input isDisabled={true} m={3} placeholder="*********"/>
+            <Input isDisabled={true} m={1}  placeholder="Nadine Nachhilfe"/>
+            <Input isDisabled={true} m={1} placeholder="*********"/>
         </>
 	);
 };

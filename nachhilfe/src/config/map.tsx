@@ -66,7 +66,7 @@ export const mapping = {
 		title: 'Kalender',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Kalender'),
 		components: [
 			{
 				component: require('../components/pages/Kalender/main'),
@@ -118,7 +118,7 @@ export const mapping = {
 		title: 'Rechnungen',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Rechnungen'),
 		components: [
 			{
 				component: require('../components/pages/Rechnungen/main'),
@@ -131,7 +131,7 @@ export const mapping = {
 		title: 'Skills',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Skills'),
 		components: [
 			{
 				component: require('../components/pages/Rechnungen/main'),
@@ -185,7 +185,7 @@ export const mapping = {
 		title: 'News',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/News'),
 		components: [
 			{
 				component: require('../components/pages/News/main'),
@@ -198,7 +198,7 @@ export const mapping = {
 		title: 'Werbung',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Werbung'),
 		components: [
 			{
 				component: require('../components/pages/Werbung/main'),

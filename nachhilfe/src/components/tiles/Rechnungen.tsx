@@ -10,7 +10,7 @@ export const Example = () => {
                 _light={{ bg: 'blue.300' }}
                 _dark={{ bg: 'blue.400' }}
                 _text={{ opacity: 30 }}
-                source={{ uri: "https://static.vecteezy.com/system/resources/previews/005/568/820/original/ranking-factor-icon-in-trendy-long-shadow-style-isolated-on-soft-blue-background-free-vector.jpg" }}
+                source={{ uri: "https://www.pngitem.com/pimgs/m/347-3477356_law-practice-management-software-for-tax-law-attorneys.png" }}
             >
               
             </Avatar>

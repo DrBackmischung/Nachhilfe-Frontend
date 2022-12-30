@@ -91,13 +91,13 @@ export const Layout = ({
 								</Pressable>
 								<Heading
 									color={colorMode == 'dark' ? 'white' : 'gray.800'}
-									// fontSize={{
-									// 	lg: '3xl',
-									// }}
-									_web={{ py: 2 }}
+									 fontSize={{
+										lg: '5xl',
+								 }}
+									_web={{ py: 6 }}
 									isTruncated
 								>
-									{title ? title : 'NativeBase'}
+									{title ? title : 'Nachhilfevermittlung LOCO'}
 								</Heading>
 							{/* </HStack> */}
 							{/* <Text color={colorMode == 'dark' ? 'white' : 'gray.800'}>v3</Text> */}
