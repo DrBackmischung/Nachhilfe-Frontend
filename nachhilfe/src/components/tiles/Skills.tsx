@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, VStack, Box } from 'native-base';
+import { Avatar, VStack, Box, Flex, Center } from 'native-base';
 
 export const Example = () => {
 	return (
@@ -12,7 +12,9 @@ export const Example = () => {
                 _text={{ opacity: 30 }}
                 source={{ uri: "https://thumbs.dreamstime.com/b/red-human-brain-icon-stock-vector-red-human-brain-icon-vector-117693464.jpg" }}
             >
-              
+
+
+
             </Avatar>
 		</VStack>
 	);
