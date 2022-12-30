@@ -18,29 +18,29 @@ export const Example = () => {
         <>
         <Flex direction="row">
             <Flex direction="column" mb="2.5" mt="1.5">
-                <Center size="4" bg="primary.100" _text={{
+                <Center size="4" bg="red.100" _text={{
                     color: "coolGray.800"
                 }}>
                 </Center>
-                <Center size="4" bg="primary.200" _text={{
+                <Center size="4" bg="red.200" _text={{
                     color: "coolGray.800"
                 }}>
                 </Center>
-                <Center bg="primary.300" size="4" _text={{
+                <Center bg="red.300" size="4" _text={{
                     color: "coolGray.800"
                 }}>
                 </Center>
-                <Center size="4" bg="primary.400" _text={{
+                <Center size="4" bg="red.400" _text={{
                     color: "coolGray.800"
                 }}>
                 </Center>
             </Flex>
             <Flex direction="column-reverse" mb="2.5" mt="1.5">
-                <Center size="4" bg="primary.100" _text={{
+                <Center size="4" bg="yellow.100" _text={{
                     color: "coolGray.800"
                 }}>
                 </Center>
-                <Center size="4" bg="primary.400" _text={{
+                <Center size="4" bg="yellow.400" _text={{
                     color: "coolGray.800"
                 }}>
                 </Center>
