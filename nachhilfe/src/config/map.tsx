@@ -53,7 +53,7 @@ export const mapping = {
 		title: 'Nachhilfestunden anlegen',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Stundenplaner'),
 		components: [
 			{
 				component: require('../components/pages/Buchung/main'),
