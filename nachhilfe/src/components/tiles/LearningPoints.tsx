@@ -4,7 +4,7 @@ import { Avatar, VStack, Box, Center, Flex } from 'native-base';
 export const Example = () => {
 
 
-    // setupData
+    // setupData -> APIURL/stats/user/{id}/lp
     // Async Storage
 
 	return (

@@ -9,19 +9,7 @@ export const Floaters = () => {
 
 	return (
 		<>
-			<Logo
-				size={{ base: 64, md: 450 }}
-				zIndex={-1}
-				opacity={0.4}
-				_ios={{
-					opacity: 0.6,
-				}}
-				// size={64}
-				position="absolute"
-				top={{ base: -80, md: -180 }}
-				// top={-80}
-				right={{ base: -60, md: -100 }}
-			/>
+			{/*<Logo size={{ base: 64, md: 450 }} zIndex={-1} opacity={0.4} _ios={{ opacity: 0.6, }} position="absolute" top={{ base: -80, md: -180 }} right={{ base: -60, md: -100 }}/>*/}
 			<StatusBar
 				style={colorMode === 'dark' ? 'light' : 'dark'}
 				backgroundColor={colorMode == 'dark' ? '#27272a' : '#f3f2f2'}
