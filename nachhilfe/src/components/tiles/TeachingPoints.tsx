@@ -25,10 +25,8 @@ export const Example = (props: any) => {
     }, [isOpen])
 
     useEffect(() => {
-        if(isOpen) {
-            setupData();
-        }
-    }, [isOpen, currentId])
+        setupData();
+    }, [currentId])
 
     const url = `${APIUrl}/stats/user/${currentId}/tp`;
    
