@@ -49,6 +49,8 @@ export const StatsDialog = (props: any) => {
             const data: any = await response.json();
             if (data !== undefined) {
                 setLearningPoints(data.learningPoints)
+                setProfilePoints(data.profilePoints)
+                setTeachingPoints(data.teachingPoints)
             }
         }
     };
@@ -67,54 +69,44 @@ export const StatsDialog = (props: any) => {
             </Heading>
             <>
 
-                <Box safeArea p="1" py="8" w="90%"></Box>
+                <Box safeArea p="1" py="2" w="90%"></Box>
                     <VStack justifyContent="center">
                         <Center>
+                        <Avatar
+                            alignSelf="center"
+                            size="lg"
+                            _light={{ bg: 'blue.300' }}
+                            _dark={{ bg: 'blue.400' }}
+                            _text={{ opacity: 0 }}
+                            source={{ uri: "https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" }}
+                        >
+                        <Avatar.Badge
+                            _light={{ bg: 'green.300' }}
+                            _dark={{ bg: 'green.400' }}
+                            borderWidth={0}
+                            boxSize={5}
+                        />
+                        </Avatar>
+                            <Box safeArea p="1" py="6" w="90%"></Box>
                             <Avatar
-                                alignSelf="right"
-                                size="lg"
-                                _light={{ bg: 'blue.300' }}
-                                _dark={{ bg: 'blue.400' }}
-                                _text={{
-                                    opacity: 100,
-                                }}
-                            >
-                                SA
-                            <Avatar.Badge
-                                _light={{ bg: 'green.300' }}
-                                _dark={{ bg: 'green.400' }}
-                                borderWidth={2}
-                                boxSize={6}
-                            />
-                            </Avatar>
-                            <Box safeArea p="1" py="4" w="90%"></Box>
-                            <Heading size="md" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                                Teaching points: 
-                            </Heading>
-                            <Heading size="sm" fontWeight="200" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                                Hierzu fallen Punkte, bei denen du anderen Schülern Unterricht gegeben hast   lorem ipsum                          
-                            </Heading>
-                            <Box safeArea p="1" py="2" w="90%"></Box>
-                            <Avatar
-                                marginRight="20"
                                 size="md"
                                 _light={{ bg: 'blue.300' }}
                                 _dark={{ bg: 'blue.400' }}
                                 _text={{ opacity: 30 }}
-                                source={{ uri: "https://www.iconbunny.com/icons/media/catalog/product/1/2/122.9-teacher-ii-icon-iconbunny.jpg" }}
+                                source={{ uri: "https://www.iconbunny.com/icons/media/catalog/product/2/1/2163.8-teaching-icon-iconbunny.jpg" }}
                             >
                             </Avatar>
-                            <Box safeArea p="1" py="4" w="90%"></Box>
-                            {learningPoints === undefined ? (<>Muss noch laden...</>) : (<>Geladen!</>)}
                             <Heading size="md" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                                Learning points: {learningPoints}                          
+                                Teaching points:   {teachingPoints === undefined ? (
+                                    <Spinner color="blue.500" />
+                                    ) : (<>{teachingPoints} </>)}                          
                             </Heading>  
                             <Heading size="sm" fontWeight="200" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                                Hierzu fallen Punkte, bei denen du anderen Schülern Unterricht gegeben hast                             
+                                Hierzu fallen Punkte, bei denen du anderen Schülern Unterricht gegeben hast. 
+                                Also hilf gerne weiteren Schülern!                    
                             </Heading>
-                                 <Box safeArea p="1" py="2" w="90%"></Box>
+                            <Box safeArea p="1" py="4" w="90%"></Box>
                             <Avatar
-                                marginRight="20"
                                 size="md"
                                 _light={{ bg: 'blue.300' }}
                                 _dark={{ bg: 'blue.400' }}
@@ -122,15 +114,16 @@ export const StatsDialog = (props: any) => {
                                 source={{ uri: "https://cdn1.iconfinder.com/data/icons/rounded-icons-for-it/512/student-phd-professor-hat-man-512.png" }}
                             >
                             </Avatar>
-                            <Box safeArea p="1" py="4" w="90%"></Box>
                             <Heading size="md" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                                Profile points: 
+                                Learning points:   {learningPoints === undefined ? (
+                                    <Spinner color="blue.500" />
+                                    ) : (<> {learningPoints}   </>)}                       
+                            </Heading>  
+                            <Heading size="sm" fontWeight="200" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                                Nimm weitere Stunden Nachhilfe und steigere so deine Learning Points!                          
                             </Heading>
-                            <Heading size="sm" fontWeight="200" color="darkGray.800" _dark={{color: "warmGray.50"}}>
-                                Hierzu fallen Punkte, bei denen du anderen Schülern Unterricht gegeben hast                             
-                            </Heading><Box safeArea p="1" py="2" w="90%"></Box>
+                            <Box safeArea p="1" py="4" w="90%"></Box>
                             <Avatar
-                                marginRight="20"
                                 size="md"
                                 _light={{ bg: 'blue.300' }}
                                 _dark={{ bg: 'blue.400' }}
@@ -138,24 +131,26 @@ export const StatsDialog = (props: any) => {
                                 source={{ uri: "https://www.clipartmax.com/png/middle/204-2045301_education-icon-education-logo-png-blue.png" }}
                             >
                             </Avatar>
+                            <Heading size="md" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+                                Profile points:   {profilePoints === undefined ? (
+                                    <Spinner color="blue.500" />
+                                    ) : (<>{profilePoints} </>)}                          
+                            </Heading>  
+                            <Heading size="sm" fontWeight="200" color="darkGray.800" _dark={{color: "warmGray.50"}}>
+                            Profile Points geben deinen gesamten Punktestand an. Also werde aktiver und steigere deine Punkte!             
+                            </Heading><Box safeArea p="1" py="2" w="90%"></Box>
                         <Box safeArea p="1" py="8" w="90%"></Box>
                     </Center>                            
                 </VStack>
-            </>
-                           
+            </>                   
         </Center>
             </Modal.Body>
             <Modal.Footer>
-            <Button flex="2" marginRight="5" onPress={() => {
-                    //verlinkung zur Buchung
-                }}>
-                    Neuen Termin buchen um besser zu werden
-                </Button>
                 <Button flex="1" onPress={() => {
-                    close()
+                    close(false);
                 }}>
-                    Zurück
-                </Button> 
+                Zurück
+                </Button>
             </Modal.Footer>
             </Modal.Content>
         </Modal>

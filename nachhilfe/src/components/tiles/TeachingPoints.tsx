@@ -30,7 +30,7 @@ export const Example = (props: any) => {
         }
     }, [isOpen, currentId])
 
-    const url = `${APIUrl}/stats/user/${currentId}/lp`;
+    const url = `${APIUrl}/stats/user/${currentId}/tp`;
    
 	const setupData = async () => {
         const requestOptions = {
@@ -47,9 +47,8 @@ export const Example = (props: any) => {
             setIsError(false);
             setErrorMsg("");
             const data: any = await response.json();
-            console.log(data);
             if (data !== undefined) {
-                setLearningPoints(data.learningPoints)
+                setLearningPoints(data.teachingPoints)
             }
         }
     };
@@ -69,10 +68,10 @@ export const Example = (props: any) => {
                 source={{ uri: "https://cdn1.iconfinder.com/data/icons/rounded-icons-for-it/512/student-phd-professor-hat-man-512.png" }}
             >
             </Avatar>
-            <Heading size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
-                Learning points:   {learningPoints === undefined ? (
+            <Heading marginLeft={5} size="sm" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}>
+               	marginLeft={5} {teachingPoints === undefined ? (
                     <Spinner color="blue.500" />
-                    ) : (<>{learningPoints} </>)}                          
+                    ) : (<>{teachingPoints} </>)}                          
             </Heading>  
 		</VStack>
 	);
