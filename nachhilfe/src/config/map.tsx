@@ -181,6 +181,7 @@ export const mapping = {
 			},*/
 		],
 	},
+	/* hier die neuen Tiles mit dem selben namen wie in der index.tsx eintragen! */
 	News: {
 		title: 'News',
 		description: '',

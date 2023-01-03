@@ -63,6 +63,18 @@ export const LoginDialog = (props: any) => {
               'name',
               `${data[0].userName}`,
             );
+            await AsyncStorage.setItem(
+              'lp',
+              `30`,
+            );
+            await AsyncStorage.setItem(
+              'tp',
+              `0`,
+            );
+            await AsyncStorage.setItem(
+              'pp',
+              `10`,
+            );
             console.log(data[0].userName)
           } catch (error) {
             setIsError(true);

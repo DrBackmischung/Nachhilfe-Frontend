@@ -12,43 +12,14 @@ export const Example = (props: any) => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isError, setIsError] = useState(false);
     const [errorMsg, setErrorMsg] = useState("Server Fehler, bitte erneut versuchen.");
-    const [learningPoints, setLearningPoints] = useState();
+    const [learningPoints, setLearningPoints] = useState("");
 
 
     useEffect(() => {
-        AsyncStorage.getItem('user').then((user) => {
-            setCurrentId("000001")
-            setIsLoggedIn(true)
+        AsyncStorage.getItem('lp').then((lp) => {
+            setLearningPoints(lp)
         });
-    }, [isOpen])
-
-    useEffect(() => {
-        setupData();
-    }, [currentId])
-
-    const url = `${APIUrl}/stats/user/${currentId}/lp`;
-   
-	const setupData = async () => {
-        const requestOptions = {
-            method: "GET",
-            headers: {"Content-Type": "application/json"}
-        };
-        
-        const response = await fetch(url, requestOptions)
-        if(response.status == 500) {
-            setIsError(true);
-            setErrorMsg("Server Fehler, bitte erneut versuchen")
-        }
-        if(response.ok) {
-            setIsError(false);
-            setErrorMsg("");
-            const data: any = await response.json();
-            console.log(data);
-            if (data !== undefined) {
-                setLearningPoints(data.learningPoints)
-            }
-        }
-    };
+    })
         
 
     // setupData -> APIURL/stats/user/{id}/lp
