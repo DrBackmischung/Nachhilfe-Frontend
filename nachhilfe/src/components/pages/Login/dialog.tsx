@@ -76,6 +76,11 @@ export const LoginDialog = (props: any) => {
               `${data[0].userName}`,
             );
             console.log(data[0].userName)
+            await AsyncStorage.setItem(
+              'ort',
+              `${data[0].street} ${data[0].houseNr} ${data[0].zipCode} ${data[0].city}`,
+            );
+            console.log(`${data[0].street} ${data[0].houseNr} ${data[0].zipCode} ${data[0].city}`)
           } catch (error) {
             setIsError(true);
             setErrorMsg("Server Fehler, bitte erneut versuchen")
@@ -85,7 +90,7 @@ export const LoginDialog = (props: any) => {
     
     return <>
         <Modal isOpen={isOpen} onClose={() => close()} avoidKeyboard>
-            <Modal.Content>
+            <Modal.Content maxWidth="350">
             <Modal.CloseButton />
             {userData === undefined ? (
                 <Modal.Header>Profil</Modal.Header>

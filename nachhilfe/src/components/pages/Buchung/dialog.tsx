@@ -16,11 +16,15 @@ export const BuchungsDialog = (props: any) => {
     const [skillList, setSkillList] = useState();
     const [skill, setSkill] = useState("");
     const [slots, setSlotList] = useState([]);
+    const [location, setLocation] = useState("");
 
     useEffect(() => {
         AsyncStorage.getItem('user').then((user) => {
             setCurrentUser(user)
             setIsLoggedIn(true)
+        });
+        AsyncStorage.getItem('ort').then((ort) => {
+            setLocation(ort)
         });
     }, [isOpen])
 
@@ -39,9 +43,6 @@ export const BuchungsDialog = (props: any) => {
             property = property.substr(1);
         }
         return function (a,b) {
-            /* next line works with strings and numbers, 
-             * and you may want to customize it to your needs
-             */
             var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
             return result * sortOrder;
         }
@@ -65,16 +66,35 @@ export const BuchungsDialog = (props: any) => {
             setIsError(false);
             setErrorMsg("");
             const data: any = await response.json();
-            setSlotList(data);
             console.log("Slots ==================")
             console.log(data)
 
-            data.map((s, _i) => {
+            await Promise.all(
+                data.map(async (s, i) => {
+                    const url = `${APIUrl}/distance/${location}/${s.ort}`;
+                    const res = await fetch(url, {method: "GET"})
+                    const distance: any = await res.json();
+                    console.log(distance);
+                    data[i].distanz = distance.rows[0].elements[0].distance.text;
+                    console.log(data[i])
+                    const url3 = `${APIUrl}/users/${s.lehrerId}`;
+                    const res3 = await fetch(url3, {method: "GET"})
+                    const u: any = await res3.json();
+                    console.log(u)
+                    data[i].name = `${u[0].firstName}`;
+                    console.log(data[i])
+                })
 
-            });
+            );
+            
+            console.log("nicht sortiert")
+            console.log(data)
+            const d = data.sort(dynamicSort("distanz"))
+            console.log("sortiert")
+            console.log(d)
+            setSlotList(d);
             setIsLoading(false);
         }
-        setIsLoading(false);
     } 
 
 	const setupData = async () => {
@@ -125,10 +145,32 @@ export const BuchungsDialog = (props: any) => {
                         <Divider />    
                         <Center size="5" bg="primary.0"></Center>
                         {isLoading || slots === undefined || slots.length === 0 ? (<></>) :
-                            slots.map((s, _i) => {
+                            slots.map((s, i) => {
                                 return (
                                 <>
-                                    <Heading size="sm">{s.datum}</Heading>
+                                    <Box
+                                        _light={{
+                                            bg: 'primary.100',
+                                        }}
+                                        _dark={{
+                                            bg: 'primary.0',
+                                        }}
+                                        rounded="xl"
+                                        w="80%"
+                                        borderColor="coolGray.200"
+                                        borderWidth="1"
+                                    >
+                                        <Center size="2" bg="primary.0"></Center>
+                                        <Heading size="md" bold>  Datum: {s.datum} um {s.uhrzeit} (Dauer {s.dauer}h)</Heading>
+                                        <Heading size="md">  Tutor:in: {s.name}</Heading>
+                                        <Heading size="xs">      </Heading>
+                                        <Heading size="xs">   Ort: {s.ort}</Heading>
+                                        <Heading size="xs">   Entfernung: {s.distanz}</Heading>
+                                        <Heading size="xs">   Preis: {s.preis}</Heading>
+                                        <Center size="2" bg="primary.0"></Center>
+                                        <Button height="25px">Buchen</Button>
+                                    </Box>
+                                    <Center size="5" bg="primary.0"></Center>
                                 </>)
                             })
                         }
