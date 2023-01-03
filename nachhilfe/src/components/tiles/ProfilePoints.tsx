@@ -41,7 +41,7 @@ export const Example = (props: any) => {
                     </Center>
                     <Spacer />
                     <Center>
-                        <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}  >
+                        <Heading marginLeft={5} size="lg" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}  >
                             {profilePoints === undefined ? (
                                 <Spinner color="blue.500" />
                                 ) : (<>{profilePoints}</>)}                          
