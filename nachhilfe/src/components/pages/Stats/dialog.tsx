@@ -57,7 +57,7 @@ export const StatsDialog = (props: any) => {
         
     return <>
         <Modal isOpen={isOpen} onClose={() => close()} avoidKeyboard>
-            <Modal.Content>
+            <Modal.Content maxWidth="700">
                 <Modal.CloseButton />
                 <Modal.Header>Stats</Modal.Header>
                 <Modal.Body>
