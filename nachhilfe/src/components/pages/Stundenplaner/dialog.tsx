@@ -89,15 +89,14 @@ export const StundenplanerDialog = (props: any) => {
     
     return <>
         <Modal isOpen={isOpen} onClose={() => close()} avoidKeyboard>
-            <Modal.Content>
+            <Modal.Content maxWidth="350">
             <Modal.CloseButton />
-            <Modal.Header>Skills</Modal.Header>
+            <Modal.Header>Termine anbieten</Modal.Header>
             <Modal.Body>
                 <Center w="100%">
                     <Box maxW="300">
                         <Center>
                             <VStack space={2.5}>
-                                <HStack space={2.5}>
                                     <VStack>
                                         <FormControl.Label>Tag</FormControl.Label>
                                         <Select selectedValue={day} minWidth="200" accessibilityLabel="Tag..." placeholder="Tag..." _selectedItem={{
@@ -168,9 +167,7 @@ export const StundenplanerDialog = (props: any) => {
                                             <Select.Item label="2025" value="2025"/>
                                         </Select>
                                     </VStack>
-                                </HStack>
                                 <Divider />
-                                <HStack space={2.5}>
                                     <VStack>
                                         <FormControl.Label>Zeit</FormControl.Label>
                                         <Input onChangeText={value => setTime(value)} minWidth="200"></Input>
@@ -179,20 +176,14 @@ export const StundenplanerDialog = (props: any) => {
                                         <FormControl.Label>Dauer</FormControl.Label>
                                         <Input onChangeText={value => setDuration(value)} minWidth="200"></Input>
                                     </VStack>
-                                </HStack>
-                                <HStack space={2.5}>
                                     <VStack>
                                         <FormControl.Label>Preis</FormControl.Label>
                                         <Input onChangeText={value => setPrice(value)} minWidth="200"></Input>
                                     </VStack>
-                                </HStack>
-                                <HStack space={2.5}>
                                     <VStack>
                                         <FormControl.Label>Adresse</FormControl.Label>
                                         <Input onChangeText={value => setLocation(value)}></Input>
                                     </VStack>
-                                </HStack>
-                                <HStack space={2.5}>
                                     <VStack>
                                         <FormControl.Label>Skill</FormControl.Label>
                                         <Select selectedValue={skill} minWidth="200" accessibilityLabel="Skill..." placeholder="Skill..." _selectedItem={{
@@ -206,7 +197,6 @@ export const StundenplanerDialog = (props: any) => {
                                             }
                                         </Select>
                                     </VStack>
-                                </HStack>
                             </VStack>
                         </Center>
                     </Box>
