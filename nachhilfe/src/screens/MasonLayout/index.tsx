@@ -30,6 +30,7 @@ import { SkillsDialog } from '../../components/pages/Skills/dialog';
 import { SkillverwaltungDialog } from '../../components/pages/Skillverwaltung/dialog';
 import { StundenplanerDialog } from '../../components/pages/Stundenplaner/dialog';
 import { StatsDialog } from '../../components/pages/Stats/dialog';
+import { BuchungsDialog } from '../../components/pages/Buchung/dialog';
 
 export function MasonLayout({
 
@@ -43,6 +44,7 @@ export function MasonLayout({
     const [isOpenSkillVerwaltung, setOpenSkillVerwaltung] = useState(false);
     const [isOpenStundenplaner, setOpenStundenplaner] = useState(false);
 	const [isOpenStats, setOpenStats] = useState(false);
+	const [isOpenBuchung, setOpenBuchung] = useState(false);
 
 	(function(w, d) { w.CollectId = "63a1d8d49eed8935fca50263"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);
 	return (
@@ -54,6 +56,7 @@ export function MasonLayout({
 			<SkillverwaltungDialog isOpen={isOpenSkillVerwaltung} close={() => setOpenSkillVerwaltung(false)} />
 			<StundenplanerDialog isOpen={isOpenStundenplaner} close={() => setOpenStundenplaner(false)} />
 			<StatsDialog isOpen={isOpenStats} close={() => setOpenStats(false)} />
+			<BuchungsDialog isOpen={isOpenBuchung} close={() => setOpenBuchung(false)} />
 			<ScrollView
 				contentContainerStyle={{ width: '100%' }}
 				showsVerticalScrollIndicator={false}
@@ -194,7 +197,7 @@ export function MasonLayout({
 					/>
 						<StoryBook
 						navigation={navigation}
-						open={() => setOpenProfil(true)}
+						open={() => setOpenBuchung(true)}
 						name="Buchung"
 						minH={40}
 						_box={{

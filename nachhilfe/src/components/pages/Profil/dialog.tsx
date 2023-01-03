@@ -52,7 +52,7 @@ export const ProfilDialog = (props: any) => {
     
     return <>
         <Modal isOpen={isOpen} onClose={() => close()} avoidKeyboard>
-            <Modal.Content>
+            <Modal.Content maxWidth="500">
             <Modal.CloseButton />
             {userData === undefined ? (
                 <Modal.Header>Profil</Modal.Header>

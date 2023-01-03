@@ -75,7 +75,8 @@ export const StundenplanerDialog = (props: any) => {
                 preis: price,
                 bezahlungErfolgt: "",
                 schuelerId: "",
-                lehrerId: currentUser
+                lehrerId: currentUser,
+                distanz: ""
             }),
         };
         const response3 = await fetch(urlAdd, requestOptions)
