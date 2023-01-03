@@ -4,6 +4,7 @@ import { Line, Text } from 'react-native-svg';
 import { APIUrl } from '../../../../constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { event } from 'react-native-reanimated';
+import { ConfirmationDialog } from './confirmation_dialog';
 
 
 export const BuchungsDialog = (props: any) => {
@@ -17,6 +18,9 @@ export const BuchungsDialog = (props: any) => {
     const [skill, setSkill] = useState("");
     const [slots, setSlotList] = useState([]);
     const [location, setLocation] = useState("");
+    const [selectedSlot, setSelectedSlot] = useState();
+	const [isOpenConfirmation, setOpenConfirmation] = useState(false);
+    const [trigger, setTrigger] = useState(false);
 
     useEffect(() => {
         AsyncStorage.getItem('user').then((user) => {
@@ -34,6 +38,10 @@ export const BuchungsDialog = (props: any) => {
         }
     }, [isOpen, currentUser])
 
+    useEffect(() => {
+        changeSkill(skill);
+    }, [trigger])
+
     const url = `${APIUrl}/skills`;
 
     function dynamicSort(property) {
@@ -46,6 +54,11 @@ export const BuchungsDialog = (props: any) => {
             var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
             return result * sortOrder;
         }
+    }
+
+    const confirmBooking = (s) => {
+        setSelectedSlot(s)
+        setOpenConfirmation(true)
     }
 
     const changeSkill = async (s) => {
@@ -146,36 +159,40 @@ export const BuchungsDialog = (props: any) => {
                         <Center size="5" bg="primary.0"></Center>
                         {isLoading || slots === undefined || slots.length === 0 ? (<></>) :
                             slots.map((s, i) => {
-                                return (
-                                <>
-                                    <Box
-                                        _light={{
-                                            bg: 'primary.100',
-                                        }}
-                                        _dark={{
-                                            bg: 'primary.0',
-                                        }}
-                                        rounded="xl"
-                                        w="80%"
-                                        borderColor="coolGray.200"
-                                        borderWidth="1"
-                                    >
-                                        <Center size="2" bg="primary.0"></Center>
-                                        <Heading size="md" bold>  Datum: {s.datum} um {s.uhrzeit} (Dauer {s.dauer}h)</Heading>
-                                        <Heading size="md">  Tutor:in: {s.name}</Heading>
-                                        <Heading size="xs">      </Heading>
-                                        <Heading size="xs">   Ort: {s.ort}</Heading>
-                                        <Heading size="xs">   Entfernung: {s.distanz}</Heading>
-                                        <Heading size="xs">   Preis: {s.preis}</Heading>
-                                        <Center size="2" bg="primary.0"></Center>
-                                        <Button height="25px" onPress={() => {}}>Buchen</Button>
-                                    </Box>
-                                    <Center size="5" bg="primary.0"></Center>
-                                </>)
+                                if(s.schuelerId === "" || s.schuelerId === undefined) {
+                                    return (
+                                        <>
+                                            <Box
+                                                _light={{
+                                                    bg: 'primary.100',
+                                                }}
+                                                _dark={{
+                                                    bg: 'primary.0',
+                                                }}
+                                                rounded="xl"
+                                                w="80%"
+                                                borderColor="coolGray.200"
+                                                borderWidth="1"
+                                            >
+                                                <Center size="2" bg="primary.0"></Center>
+                                                <Heading size="md" bold>  Datum: {s.datum} um {s.uhrzeit} (Dauer {s.dauer}h)</Heading>
+                                                <Heading size="md">  Tutor:in: {s.name}</Heading>
+                                                <Heading size="xs">      </Heading>
+                                                <Heading size="xs">   Ort: {s.ort}</Heading>
+                                                <Heading size="xs">   Entfernung: {s.distanz}</Heading>
+                                                <Heading size="xs">   Preis: {s.preis}</Heading>
+                                                <Center size="2" bg="primary.0"></Center>
+                                                <Button height="25px" onPress={() => {confirmBooking(s)}}>Buchen</Button>
+                                            </Box>
+                                            <Center size="5" bg="primary.0"></Center>
+                                        </>
+                                    )
+                                }
                             })
                         }
                         {isLoading ? (<><Spinner></Spinner></>) : (<></>)}
                     </Center>
+			        <ConfirmationDialog isOpen={isOpenConfirmation} close={() => setOpenConfirmation(false)} s={selectedSlot} userId={currentUser} trigger={() => setTrigger(!trigger)}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button flex="1" onPress={() => {
