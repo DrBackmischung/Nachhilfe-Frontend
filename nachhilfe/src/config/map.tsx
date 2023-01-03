@@ -18,17 +18,6 @@ export const mapping = {
 		description: '',
 		basic: require('../components/tiles/Profil'),
 		components: [
-			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
-				description: '',
-			},
-			{
-				component: require('../components/pages/Profil/skills'),
-				title: 'Skills',
-				description: '',
-			},
-
 		],
 	},
 	Login: {
@@ -37,16 +26,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Login'),
 		components: [
-			{
-				component: require('../components/pages/Login/main'),
-				title: 'Login',
-				description: '',
-			},
-			{
-				component: require('../components/pages/Login/register'),
-				title: 'Registrieren',
-				description: '',
-			},
 		],
 	},
 	Stundenplaner: {
@@ -55,11 +34,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Stundenplaner'),
 		components: [
-			{
-				component: require('../components/pages/Buchung/main'),
-				title: 'Nachhilfestunden anlegen',
-				description: '',
-			},
 		],
 	},
 	Kalender: {
@@ -68,11 +42,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Kalender'),
 		components: [
-			{
-				component: require('../components/pages/Kalender/main'),
-				title: 'Kalender',
-				description: '',
-			},
 		],
 	},
 	Buchung: {
@@ -81,11 +50,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Buchung'),
 		components: [
-			{
-				component: require('../components/pages/Buchung/main'),
-				title: 'Nachhilfestunde buchen',
-				description: '',
-			},
 		],
 	},
 	Chat: {
@@ -94,11 +58,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Chat'),
 		components: [
-			{
-				component: require('../components/pages/Chat/main'),
-				title: 'Chat',
-				description: '',
-			},
 		],
 	},
 	Chatbot: {
@@ -107,11 +66,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Profil'),
 		components: [
-			{
-				component: require('../components/pages/Profil/main'),
-				title: 'Profil',
-				description: '',
-			},
 		],
 	},
 	Rechnungen: {
@@ -120,11 +74,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Rechnungen'),
 		components: [
-			{
-				component: require('../components/pages/Rechnungen/main'),
-				title: 'Rechnungen',
-				description: '',
-			},
 		],
 	},
 	Skills: {
@@ -133,11 +82,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Skills'),
 		components: [
-			{
-				component: require('../components/pages/Rechnungen/main'),
-				title: 'Skills',
-				description: '',
-			},
 		],
 	},
 	Skillverwaltung: {
@@ -146,11 +90,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Skillverwaltung'),
 		components: [
-			{
-				component: require('../components/pages/Rechnungen/main'),
-				title: 'Skills',
-				description: '',
-			},
 		],
 	},
 	LearningPoints: {
@@ -183,11 +122,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/News'),
 		components: [
-			{
-				component: require('../components/pages/News/main'),
-				title: 'News',
-				description: '',
-			},
 		],
 	},
 	Werbung: {
@@ -196,11 +130,6 @@ export const mapping = {
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/Werbung'),
 		components: [
-			{
-				component: require('../components/pages/Werbung/main'),
-				title: 'Werbung',
-				description: '',
-			},
 		],
 	},
 };
