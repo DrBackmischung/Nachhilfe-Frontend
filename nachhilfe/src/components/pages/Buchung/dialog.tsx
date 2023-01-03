@@ -124,7 +124,7 @@ export const BuchungsDialog = (props: any) => {
                         <Center size="5" bg="primary.0"></Center>
                         <Divider />    
                         <Center size="5" bg="primary.0"></Center>
-                        {slots === undefined || slots.length === 0 ? (<></>) :
+                        {isLoading || slots === undefined || slots.length === 0 ? (<></>) :
                             slots.map((s, _i) => {
                                 return (
                                 <>
