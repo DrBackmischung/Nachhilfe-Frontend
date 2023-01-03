@@ -24,6 +24,18 @@ export const LoginDialog = (props: any) => {
     const url = `${APIUrl}/login`;
   
     const setupData = async () => {
+        await AsyncStorage.setItem(
+          'lp',
+          `30`,
+        );
+        await AsyncStorage.setItem(
+          'tp',
+          `0`,
+        );
+        await AsyncStorage.setItem(
+          'pp',
+          `10`,
+        );
         const requestOptions = {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
@@ -62,18 +74,6 @@ export const LoginDialog = (props: any) => {
             await AsyncStorage.setItem(
               'name',
               `${data[0].userName}`,
-            );
-            await AsyncStorage.setItem(
-              'lp',
-              `30`,
-            );
-            await AsyncStorage.setItem(
-              'tp',
-              `0`,
-            );
-            await AsyncStorage.setItem(
-              'pp',
-              `10`,
             );
             console.log(data[0].userName)
           } catch (error) {
