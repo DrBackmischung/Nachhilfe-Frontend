@@ -64,7 +64,7 @@ export const SkillverwaltungDialog = (props: any) => {
     
     return <>
         <Modal isOpen={isOpen} onClose={() => close()} avoidKeyboard>
-            <Modal.Content>
+            <Modal.Content maxWidth="350">
             <Modal.CloseButton />
             <Modal.Header>Skills</Modal.Header>
             <Modal.Body>
