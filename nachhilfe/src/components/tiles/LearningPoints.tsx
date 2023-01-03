@@ -31,7 +31,7 @@ export const Example = (props: any) => {
                 <Flex direction='row'>
                     <Center>
                         <Avatar             
-                            size="md"
+                            size="lg"
                             _light={{ bg: 'blue.300' }}
                             _dark={{ bg: 'blue.400' }}
                             _text={{ opacity: 30 }}
@@ -41,7 +41,7 @@ export const Example = (props: any) => {
                     </Center>
                     <Spacer />
                     <Center>
-                        <Heading size="xl" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}  >
+                        <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}  >
                             {learningPoints === undefined ? (
                                 <Spinner color="blue.500" />
                                 ) : (<>{learningPoints}</>)}                          

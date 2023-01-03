@@ -79,7 +79,7 @@ export const mapping = {
 		title: 'Nachhilfestunde buchen',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Buchung'),
 		components: [
 			{
 				component: require('../components/pages/Buchung/main'),
@@ -92,7 +92,7 @@ export const mapping = {
 		title: 'Chat',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Chat'),
 		components: [
 			{
 				component: require('../components/pages/Chat/main'),
@@ -144,7 +144,7 @@ export const mapping = {
 		title: 'Skillverwaltung',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Profil'),
+		basic: require('../components/tiles/Skillverwaltung'),
 		components: [
 			{
 				component: require('../components/pages/Rechnungen/main'),
@@ -153,35 +153,30 @@ export const mapping = {
 			},
 		],
 	},
-	Stats: {
-		title: 'Stats',
+	LearningPoints: {
+		title: 'Learning Points',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
 		basic: require('../components/tiles/LearningPoints'),
 		components: [
-			/*{
-				component: require('../components/pages/Points/learning'),
-				title: 'Learning Points',
-				description: '',
-			},
-			{
-				component: require('../components/pages/Points/teaching'),
-				title: 'Teaching Points',
-				description: '',
-			},
-			{
-				component: require('../components/pages/Points/profile'),
-				title: 'Profile Points',
-				description: '',
-			},
-			{
-				component: require('../components/pages/Points/minecraft'),
-				title: 'Minecraft',
-				description: '',
-			},*/
 		],
 	},
-	/* hier die neuen Tiles mit dem selben namen wie in der index.tsx eintragen! */
+	TeachingPoints: {
+		title: 'Teaching Points',
+		description: '',
+		doclink: 'https://docs.nativebase.io/actionSheet',
+		basic: require('../components/tiles/TeachingPoints'),
+		components: [
+		],
+	},
+	ProfilePoints: {
+		title: 'Profile Points',
+		description: '',
+		doclink: 'https://docs.nativebase.io/actionSheet',
+		basic: require('../components/tiles/ProfilePoints'),
+		components: [
+		],
+	},
 	News: {
 		title: 'News',
 		description: '',

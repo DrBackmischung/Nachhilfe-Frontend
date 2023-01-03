@@ -12,12 +12,12 @@ export const Example = (props: any) => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isError, setIsError] = useState(false);
     const [errorMsg, setErrorMsg] = useState("Server Fehler, bitte erneut versuchen.");
-    const [teachingPoints, setTeachingPoints] = useState("");
+    const [profilePoints, setprofilePoints] = useState("");
 
 
     useEffect(() => {
-        AsyncStorage.getItem('tp').then((tp) => {
-            setTeachingPoints(tp)
+        AsyncStorage.getItem('pp').then((pp) => {
+            setprofilePoints(pp)
         });
     })
         
@@ -35,16 +35,16 @@ export const Example = (props: any) => {
                             _light={{ bg: 'blue.300' }}
                             _dark={{ bg: 'blue.400' }}
                             _text={{ opacity: 30 }}
-                            source={{ uri: "https://www.iconbunny.com/icons/media/catalog/product/2/1/2163.8-teaching-icon-iconbunny.jpg" }}
+                            source={{ uri: "https://www.clipartmax.com/png/middle/204-2045301_education-icon-education-logo-png-blue.png" }}
                         >
                         </Avatar>
                     </Center>
                     <Spacer />
                     <Center>
                         <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{color: "warmGray.50"}}  >
-                            {teachingPoints === undefined ? (
+                            {profilePoints === undefined ? (
                                 <Spinner color="blue.500" />
-                                ) : (<>{teachingPoints}</>)}                          
+                                ) : (<>{profilePoints}</>)}                          
                         </Heading> 
                     </Center> 
                 </Flex>
