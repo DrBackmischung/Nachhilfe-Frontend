@@ -80,7 +80,7 @@ export function MasonLayout({
 						navigation={navigation}
 						open={() => setOpenLogin(true)}
 						name="Login"
-						minH={50}
+						minH={175}
 						_box={{
 							lightGrad: ['blue.800', 'lightBlue.300'],
 							darkGrad: ['blue.900', 'lightBlue.500'],
@@ -92,11 +92,11 @@ export function MasonLayout({
 					<StoryBook
 						navigation={navigation}
 						open={() => setOpenProfil(true)}
-						name="Profil"
-						minH={40}
+						name="Registrierung"
+						minH={175}
 						_box={{
-							lightGrad: ['cyan.400', 'teal.200'],
-							darkGrad: ['cyan.600', 'teal.300'],
+							lightGrad: ['red.400', 'orange.200'],
+							darkGrad: ['red.600', 'orange.300'],
 						}}
 						_heading={{
 							color: 'amber.100',
@@ -104,9 +104,36 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenProfil(true)}
+						name="Profil"
+						minH={150}
+						_box={{
+							lightGrad: ['cyan.400', 'teal.200'],
+							darkGrad: ['cyan.600', 'teal.300'],
+						}}
+						_heading={{
+							color: 'amber.100',
+						}}
+					/>	
+					<StoryBook
+						navigation={navigation}
+						open={() => setOpenStats(true)}
+						name="LearningPoints"
+						// colors={['green.700', 'lime.200']}
+						minH={150}
+						_box={{
+							lightGrad: ['violet.800', 'lightBlue.300'],
+							darkGrad: ['violet.900', 'lightBlue.500'],
+						}}
+						_heading={{
+							color: 'lightBlue.100',
+						}}
+					/>
+					<StoryBook
+						navigation={navigation}
 						open={() => setOpenSkillVerwaltung(true)}
 						name="Skillverwaltung"
-						minH={40}
+						minH={150}
 						_box={{
 							lightGrad: ['violet.800', 'lightBlue.300'],
 							darkGrad: ['violet.900', 'lightBlue.500'],
@@ -119,7 +146,7 @@ export function MasonLayout({
 						navigation={navigation}
 						open={() => setOpenSkills(true)}
 						name="Skills"
-						minH={40}
+						minH={150}
 						_box={{
 							lightGrad: ['red.400', 'amber.200'],
 							darkGrad: ['orange.600', 'amber.300'],
@@ -130,23 +157,9 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
-						open={() => setOpenStats(true)}
-						name="TeachingPoints"
-						// colors={['green.700', 'lime.200']}
-						minH={20}
-						_box={{
-							lightGrad: ['violet.800', 'lightBlue.300'],
-							darkGrad: ['violet.900', 'lightBlue.500'],
-						}}
-						_heading={{
-							color: 'lightBlue.100',
-						}}
-					/>
-					<StoryBook
-						navigation={navigation}
 						open={() => setOpenStundenplaner(true)}
 						name="Stundenplaner"
-						minH={40}
+						minH={250}
 						_box={{
 							lightGrad: ['cyan.400', 'teal.200'],
 							darkGrad: ['cyan.600', 'teal.300'],
@@ -157,9 +170,23 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
+						open={() => setOpenStats(true)}
+						name="TeachingPoints"
+						// colors={['green.700', 'lime.200']}
+						minH={150}
+						_box={{
+							lightGrad: ['violet.800', 'lightBlue.300'],
+							darkGrad: ['violet.900', 'lightBlue.500'],
+						}}
+						_heading={{
+							color: 'lightBlue.100',
+						}}
+					/>
+					<StoryBook
+						navigation={navigation}
 						open={() => setOpenProfil(true)}
 						name="Kalender"
-						minH={40}
+						minH={250}
 						_box={{
 							lightGrad: ['orange.400', 'amber.200'],
 							darkGrad: ['orange.600', 'amber.300'],
@@ -170,36 +197,9 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
-						open={() => setOpenProfil(true)}
-						name="Rechnungen"
-						minH={40}
-						_box={{
-							lightGrad: ['cyan.400', 'teal.200'],
-							darkGrad: ['cyan.600', 'teal.300'],
-						}}
-						_heading={{
-							color: 'amber.100',
-						}}
-					/>				
-					<StoryBook
-						navigation={navigation}
-						open={() => setOpenStats(true)}
-						name="LearningPoints"
-						// colors={['green.700', 'lime.200']}
-						minH={20}
-						_box={{
-							lightGrad: ['violet.800', 'lightBlue.300'],
-							darkGrad: ['violet.900', 'lightBlue.500'],
-						}}
-						_heading={{
-							color: 'lightBlue.100',
-						}}
-					/>
-						<StoryBook
-						navigation={navigation}
 						open={() => setOpenBuchung(true)}
 						name="Buchung"
-						minH={40}
+						minH={250}
 						_box={{
 							lightGrad: ['blue.800', 'lightBlue.300'],
 							darkGrad: ['blue.900', 'lightBlue.500'],
@@ -207,25 +207,12 @@ export function MasonLayout({
 						_heading={{
 							color: 'amber.100',
 						}}
-					/>
+					/>	
 					<StoryBook
 						navigation={navigation}
 						open={() => setOpenProfil(true)}
-						name="Chat"
-						minH={40}
-						_box={{
-							lightGrad: ['orange.400', 'amber.200'],
-							darkGrad: ['orange.600', 'amber.300'],
-						}}
-						_heading={{
-							color: 'amber.100',
-						}}
-					/>
-					<StoryBook
-						navigation={navigation}
-						open={() => setOpenProfil(true)}
-						name="News"
-						minH={40}
+						name="Rechnungen"
+						minH={250}
 						_box={{
 							lightGrad: ['cyan.400', 'teal.200'],
 							darkGrad: ['cyan.600', 'teal.300'],
@@ -239,7 +226,7 @@ export function MasonLayout({
 						open={() => setOpenStats(true)}
 						name="ProfilePoints"
 						// colors={['green.700', 'lime.200']}
-						minH={20}
+						minH={150}
 						_box={{
 							lightGrad: ['violet.800', 'lightBlue.300'],
 							darkGrad: ['violet.900', 'lightBlue.500'],
@@ -252,7 +239,7 @@ export function MasonLayout({
 						navigation={navigation}
 						open={() => setOpenProfil(true)}
 						name="Werbung"
-						minH={40}
+						minH={150}
 						_box={{
 							lightGrad: ['orange.400', 'amber.200'],
 							darkGrad: ['orange.600', 'amber.300'],
@@ -260,7 +247,20 @@ export function MasonLayout({
 						_heading={{
 							color: 'amber.100',
 						}}
-					/>
+					/>	
+					<StoryBook
+						navigation={navigation}
+						open={() => setOpenProfil(true)}
+						name="News"
+						minH={50}
+						_box={{
+							lightGrad: ['cyan.400', 'teal.200'],
+							darkGrad: ['cyan.600', 'teal.300'],
+						}}
+						_heading={{
+							color: 'amber.100',
+						}}
+					/>	
 				</MasonaryLayout>
 				{/* {isLargeScreen ? (
 					<MasonWeb navigation={navigation} />

@@ -52,11 +52,11 @@ export const mapping = {
 		components: [
 		],
 	},
-	Chat: {
-		title: 'Chat',
+	Registrierung: {
+		title: 'Registrierung',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Chat'),
+		basic: require('../components/tiles/Registrierung'),
 		components: [
 		],
 	},

@@ -97,7 +97,7 @@ export const Layout = ({
 									_web={{ py: 6 }}
 									isTruncated
 								>
-									{title ? title : 'Nachhilfevermittlung LOCO'}
+									{title ? title : 'Nachhilfevermittlung Rhein-Neckar e.V.'}
 								</Heading>
 							{/* </HStack> */}
 							{/* <Text color={colorMode == 'dark' ? 'white' : 'gray.800'}>v3</Text> */}
