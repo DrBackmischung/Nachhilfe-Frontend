@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, Avatar, Box, Button, Center, CheckIcon, FormControl, Heading, HStack, Input, Link, Modal, Select, Spinner, Stack, VStack } from 'native-base';
+import { Alert, Avatar, Box, Button, Center, CheckIcon, FormControl, Heading, HStack, Input, Link, Modal, Select, Spinner, Stack, useToast, VStack } from 'native-base';
 import { Line, Text } from 'react-native-svg';
 import { APIUrl } from '../../../../constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const SkillverwaltungDialog = (props: any) => {
     const {isOpen, close} = props
+    const toast = useToast();
     const [currentUser, setCurrentUser] = useState("");
     const [skillList, setSkillList] = useState();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -59,6 +60,7 @@ export const SkillverwaltungDialog = (props: any) => {
         if(response3.ok) {
             setIsError(false);
             setErrorMsg("");
+            toast.show({description: "Skill hinzugefügt!"})
         }
     }
     

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, Avatar, Box, Button, Center, CheckIcon, FormControl, Heading, HStack, Input, Link, Modal, Select, Spinner, Stack, VStack } from 'native-base';
+import { Alert, Avatar, Box, Button, Center, CheckIcon, FormControl, Heading, HStack, Input, Link, Modal, Select, Spinner, Stack, useToast, VStack } from 'native-base';
 import { Line, Text } from 'react-native-svg';
 import { APIUrl } from '../../../../constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const LoginDialog = (props: any) => {
     const {isOpen, close} = props
+    const toast = useToast();
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [currentUser, setCurrentUser] = useState("");
@@ -85,6 +86,7 @@ export const LoginDialog = (props: any) => {
             setIsError(true);
             setErrorMsg("Server Fehler, bitte erneut versuchen")
           }
+          toast.show({description: "Eingeloggt als "+data[0].userName+"!"})
         }
     };
     
@@ -105,29 +107,6 @@ export const LoginDialog = (props: any) => {
                         }}>
                             Willkommen!
                         </Heading>
-                        {isLoggedIn ? (
-                        <>
-                            <Heading mt="1"
-                            _dark={{color: "green.200"}}
-                            color="green.600"
-                            fontWeight="medium"
-                            size="xs"
-                            >
-                            Eingeloggt als {currentUser}!
-                            </Heading>
-                        </>
-                        ) : (
-                        <>
-                            <Heading mt="1"
-                            _dark={{color: "warmGray.200"}}
-                            color="coolGray.600"
-                            fontWeight="medium"
-                            size="xs"
-                            >
-                            Einloggen, um Inhalt nutzen zu können!
-                            </Heading>
-                        </>
-                        )}
                         {isError ? (
                         <>
                             <Heading mt="1"

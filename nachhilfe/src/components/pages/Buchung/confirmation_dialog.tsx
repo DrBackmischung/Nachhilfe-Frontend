@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, Avatar, Box, Button, Center, CheckIcon, FormControl, Heading, HStack, Input, Link, Modal, Select, Spinner, Stack, VStack } from 'native-base';
+import { Alert, Avatar, Box, Button, Center, CheckIcon, FormControl, Heading, HStack, Input, Link, Modal, Select, Spinner, Stack, useToast, VStack } from 'native-base';
 import { Line, Text } from 'react-native-svg';
 import { APIUrl } from '../../../../constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const ConfirmationDialog = (props: any) => {
     const {isOpen, close, s, userId, trigger} = props
+    const toast = useToast();
     const [currentUser, setCurrentUser] = useState("");
     const [isError, setIsError] = useState(false);
     const [errorMsg, setErrorMsg] = useState("Server Fehler, bitte erneut versuchen.");
@@ -47,6 +48,7 @@ export const ConfirmationDialog = (props: any) => {
           setIsError(false);
           setErrorMsg("");
         }
+        toast.show({description: "Termin gebucht! Die Bestätigungsmail wird verschickt."})
         trigger();
     }
     
