@@ -168,7 +168,6 @@ export const StundenplanerDialog = (props: any) => {
                                             <Select.Item label="2025" value="2025"/>
                                         </Select>
                                     </VStack>
-                                <Divider />
                                     <VStack>
                                         <FormControl.Label>Zeit</FormControl.Label>
                                         <Input onChangeText={value => setTime(value)} minWidth="200"></Input>
