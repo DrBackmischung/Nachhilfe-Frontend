@@ -1,18 +1,116 @@
 import React from 'react';
-import { Avatar, VStack, Box } from 'native-base';
+import { Avatar, VStack, Box, HStack } from 'native-base';
 
 export const Example = () => {
 	return (
-		<VStack justifyContent="center" w="80%">
-            <Avatar
-                alignSelf="center"
-                size="lg"
-                _light={{ bg: 'blue.300' }}
-                _dark={{ bg: 'blue.400' }}
-                _text={{ opacity: 0 }}
-                source={{ uri: "https://cdn-icons-png.flaticon.com/512/230/230403.png?w=360" }}
+        <>
+            <HStack
+                space={3}
+                alignItems="center"
+                m={4}
+                p={2}
+                rounded="md"
+                _light={{
+                    bg: 'green.100',
+                }}
+                _dark={{
+                    bg: 'green.400',
+                }}
+                w="70%"
             >
-            </Avatar>
-		</VStack>
+                <VStack space={1} flex={1}>
+                    <Box
+                        _light={{
+                            bg: 'green.400',
+                        }}
+                        _dark={{
+                            bg: 'gray.100',
+                        }}
+                        rounded="sm"
+                        h="11px"
+                        w="50%"
+                    />
+                    <Box
+                        _light={{
+                            bg: 'green.0',
+                        }}
+                        _dark={{
+                            bg: 'gray.0',
+                        }}
+                        h="8px"
+                        rounded="pill"
+                        w="100%"
+                    />
+                    <Box
+                        _light={{
+                            bg: 'green.300',
+                        }}
+                        _dark={{
+                            bg: 'gray.100',
+                        }}
+                        h="8px"
+                        rounded="pill"
+                        w="100%"
+                    />
+                    <Box
+                        _light={{
+                            bg: 'green.300',
+                        }}
+                        _dark={{
+                            bg: 'gray.100',
+                        }}
+                        h="8px"
+                        rounded="pill"
+                        w="100%"
+                    />
+                </VStack>
+                <VStack space={1} flex={1}>
+                    <Box
+                        _light={{
+                            bg: 'green.0',
+                        }}
+                        _dark={{
+                            bg: 'gray.0',
+                        }}
+                        rounded="sm"
+                        h="11px"
+                        w="50%"
+                    />
+                    <Box
+                        _light={{
+                            bg: 'green.300',
+                        }}
+                        _dark={{
+                            bg: 'gray.100',
+                        }}
+                        h="8px"
+                        rounded="pill"
+                        w="100%"
+                    />
+                    <Box
+                        _light={{
+                            bg: 'green.300',
+                        }}
+                        _dark={{
+                            bg: 'gray.100',
+                        }}
+                        h="8px"
+                        rounded="pill"
+                        w="100%"
+                    />
+                    <Box
+                        _light={{
+                            bg: 'green.300',
+                        }}
+                        _dark={{
+                            bg: 'gray.100',
+                        }}
+                        h="8px"
+                        rounded="pill"
+                        w="100%"
+                    />
+                </VStack>
+            </HStack>
+        </>
 	);
 };

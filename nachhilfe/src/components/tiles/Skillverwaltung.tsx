@@ -1,18 +1,23 @@
 import React from 'react';
-import { Avatar, VStack, Box } from 'native-base';
+import { Avatar, VStack, Box, HStack, FormControl, Input, Flex, Center, Select, CheckIcon } from 'native-base';
 
 export const Example = () => {
 	return (
-		<VStack justifyContent="center" w="80%">
-            <Avatar
-                alignSelf="center"
-                size="lg"
-                _light={{ bg: 'blue.300' }}
-                _dark={{ bg: 'blue.400' }}
-                _text={{ opacity: 0 }}
-                source={{ uri: "https://png.pngtree.com/element_our/png_detail/20181227/administration-vector-icon-png_286819.jpg" }}
-            >
-            </Avatar>
-		</VStack>
+        <HStack
+            alignItems="center"
+            m={4}
+            p={2}
+            rounded="md"
+            _light={{
+                bg: 'yellow.200',
+            }}
+            _dark={{
+                bg: 'yellow.500', 
+            }}
+            w="80%"
+        >
+        <Input isDisabled={true} m={1}  placeholder={"Skill..."} width="75%"/>
+                <Input isDisabled={true} m={1}  placeholder={"User..."} width="75%"/>
+        </HStack>
 	);
 };
