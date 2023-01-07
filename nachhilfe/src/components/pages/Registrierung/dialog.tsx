@@ -23,6 +23,7 @@ export const RegistrierungsDialog = (props: any) => {
     const [errorMsg, setErrorMsg] = useState("Server Fehler, bitte erneut versuchen.");
 
     const url = `${APIUrl}/register`;
+    const url2 = `${APIUrl}/stats`;
   
     const setupData = async () => {
         const requestOptions = {
@@ -61,6 +62,21 @@ export const RegistrierungsDialog = (props: any) => {
           setErrorMsg("");
           const data: any = await response.json();
           try {
+            const requestOptionsStats = {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    userId: data[0].id,
+                    registerDate: "",
+                    learningPoints: 0,
+                    teachingPoints: 0,
+                    profilePoints: 0,
+                    mc1: 0,
+                    mc2: 0,
+                    mc3: 0
+                }),
+            };
+            const stats = await fetch(url2, requestOptionsStats)
             await AsyncStorage.setItem(
               'user',
               `${data[0].id}`,
@@ -74,6 +90,18 @@ export const RegistrierungsDialog = (props: any) => {
             await AsyncStorage.setItem(
               'ort',
               `${data[0].street} ${data[0].houseNr} ${data[0].zipCode} ${data[0].city}`,
+            );
+            await AsyncStorage.setItem(
+              'lp',
+              `0`,
+            );
+            await AsyncStorage.setItem(
+              'tp',
+              `0`,
+            );
+            await AsyncStorage.setItem(
+              'pp',
+              `0`,
             );
             console.log(`${data[0].street} ${data[0].houseNr} ${data[0].zipCode} ${data[0].city}`)
           } catch (error) {
