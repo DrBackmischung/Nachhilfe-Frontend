@@ -19,7 +19,7 @@ export const StatsDialog = (props: any) => {
 
     useEffect(() => {
         AsyncStorage.getItem('user').then((user) => {
-            setCurrentUser("000001")
+            setCurrentUser(user)
             setIsLoggedIn(true)
         });
     }, [isOpen])

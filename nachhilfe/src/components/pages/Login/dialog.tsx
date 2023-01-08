@@ -23,8 +23,46 @@ export const LoginDialog = (props: any) => {
     }, [])
 
     const url = `${APIUrl}/login`;
-    const url2 = `${APIUrl}/stats`;
   
+    const getPoints = async (name) => {
+        
+        const url2 = `${APIUrl}/stats/user/${name}`;
+        const requestOptions2 = {
+            method: "GET",
+            headers: {"Content-Type": "application/json"},
+        };
+        const response2 = await fetch(url2, requestOptions2)
+        if(response2.ok) {
+          const data2: any = await response2.json();
+          console.log("Stats")
+          console.log(data2)
+          await AsyncStorage.setItem(
+            'lp',
+            `${data2.learningPoints}`,
+          );
+          await AsyncStorage.setItem(
+            'tp',
+            `${data2.teachingPoints}`,
+          );
+          await AsyncStorage.setItem(
+            'pp',
+            `${data2.profilePoints}`,
+          );
+          await AsyncStorage.setItem(
+            'mc1',
+            `${data2.mc1}`,
+          );
+          await AsyncStorage.setItem(
+            'mc2',
+            `${data2.mc2}`,
+          );
+          await AsyncStorage.setItem(
+            'mc3',
+            `${data2.mc3}`,
+          );
+        }
+    }
+
     const setupData = async () => {
         const requestOptions = {
             method: "PUT",
@@ -75,6 +113,7 @@ export const LoginDialog = (props: any) => {
             setIsError(true);
             setErrorMsg("Server Fehler, bitte erneut versuchen")
           }
+          getPoints(data[0].id)
           toast.show({description: "Eingeloggt als "+data[0].userName+"!"})
         }
     };

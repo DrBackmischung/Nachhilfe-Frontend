@@ -121,6 +121,20 @@ export function MasonLayout({
 					<StoryBook
 						navigation={navigation}
 						open={() => setOpenStats(true)}
+						name="Minecraft"
+						// colors={['green.700', 'lime.200']}
+						minH={150}
+						_box={{
+							lightGrad: ['green.800', 'green.300'],
+							darkGrad: ['green.900', 'green.500'],
+						}}
+						_heading={{
+							color: 'lightBlue.100',
+						}}
+					/>
+					<StoryBook
+						navigation={navigation}
+						open={() => setOpenStats(true)}
 						name="LearningPoints"
 						// colors={['green.700', 'lime.200']}
 						minH={150}

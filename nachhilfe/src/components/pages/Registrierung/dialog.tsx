@@ -103,6 +103,18 @@ export const RegistrierungsDialog = (props: any) => {
               'pp',
               `0`,
             );
+            await AsyncStorage.setItem(
+              'mc1',
+              `0`,
+            );
+            await AsyncStorage.setItem(
+              'mc2',
+              `0`,
+            );
+            await AsyncStorage.setItem(
+              'mc3',
+              `0`,
+            );
             console.log(`${data[0].street} ${data[0].houseNr} ${data[0].zipCode} ${data[0].city}`)
           } catch (error) {
             setIsError(true);

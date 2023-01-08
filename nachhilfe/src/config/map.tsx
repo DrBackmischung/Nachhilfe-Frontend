@@ -84,6 +84,14 @@ export const mapping = {
 		components: [
 		],
 	},
+	Minecraft: {
+		title: 'Minecraft',
+		description: '',
+		doclink: 'https://docs.nativebase.io/actionSheet',
+		basic: require('../components/tiles/Minecraft'),
+		components: [
+		],
+	},
 	Skillverwaltung: {
 		title: 'Skillverwaltung',
 		description: '',
