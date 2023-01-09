@@ -10,12 +10,14 @@ export const ConfirmationDialog = (props: any) => {
     const {isOpen, close, s, userId, trigger} = props
     const toast = useToast();
     const [currentUser, setCurrentUser] = useState("");
+    const [userData, setUserData] = useState();
     const [isError, setIsError] = useState(false);
     const [errorMsg, setErrorMsg] = useState("Server Fehler, bitte erneut versuchen.");
 
     useEffect(() => {
         AsyncStorage.getItem('user').then((user) => {
             setCurrentUser(user)
+            setupUser(user)
         });
     }, [isOpen])
 
@@ -45,14 +47,66 @@ export const ConfirmationDialog = (props: any) => {
         if(response.status !== 200) {
           setIsError(true);
           setErrorMsg("Server Fehler, bitte erneut versuchen")
+          sendMail()
         }
         if(response.ok) {
           setIsError(false);
           setErrorMsg("");
+          sendMail()
         }
         toast.show({description: "Termin gebucht! Die Bestätigungsmail wird verschickt."})
         trigger();
     }
+
+    const sendMail = async () => {
+        if(userData !== undefined) {
+            
+            const url = `${APIUrl}/billing`;
+            
+            const requestOptions = {
+                method: "PUT",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    name: userData.firstName,
+                    mail: userData.mail,
+                    address: s.ort,
+                    article: s.fach,
+                    price: s.preis,
+                }),
+            };
+            const response = await fetch(url, requestOptions)
+            if(response.status !== 200) {
+            setIsError(true);
+            setErrorMsg("Server Fehler, bitte erneut versuchen")
+            }
+            if(response.ok) {
+            setIsError(false);
+            setErrorMsg("");
+            }
+        }
+    }
+
+  
+    const setupUser = async (u: any) => {
+        const url = `${APIUrl}/users/${u}`;
+      const requestOptions = {
+          method: "GET",
+          headers: {"Content-Type": "application/json"}
+      };
+      const response = await fetch(url, requestOptions)
+      if(response.status == 404) {
+        setIsError(true);
+        setErrorMsg("Dein Profil wurde nicht gefunden.")
+      }
+      if(response.status == 500) {
+        setIsError(true);
+        setErrorMsg("Server Fehler, bitte erneut versuchen")
+      }
+      if(response.ok) {
+        const data: any = await response.json();
+        setUserData(data[0]);
+      }
+    };
     
     return <>
         <Modal isOpen={isOpen} onClose={() => close()} avoidKeyboard>
