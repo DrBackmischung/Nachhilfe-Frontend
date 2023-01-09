@@ -16,7 +16,7 @@ import {
 	IconButton,
 } from 'native-base';
 import { mapping } from '../../config/map';
-import { Dimensions, ScrollView, StatusBar } from 'react-native';
+import { Dimensions, Linking, ScrollView, StatusBar } from 'react-native';
 import { MasonaryLayout } from '../../components/MasonLayout/MasonaryLayout';
 import { MasonMobile } from '../../components/MasonLayout/mobile';
 import { MasonWeb } from '../../components/MasonLayout/web';
@@ -33,6 +33,9 @@ import { StatsDialog } from '../../components/pages/Stats/dialog';
 import { BuchungsDialog } from '../../components/pages/Buchung/dialog';
 import { RegistrierungsDialog } from '../../components/pages/Registrierung/dialog';
 import { MCDialog } from '../../components/pages/Minecraft/dialog';
+import { Platform } from 'react-native';
+import { BUTPDialog } from '../../components/pages/BUTP/dialog';
+import { KalenderDialog } from '../../components/pages/Kalender/dialog';
 
 export function MasonLayout({
 
@@ -49,8 +52,11 @@ export function MasonLayout({
 	const [isOpenBuchung, setOpenBuchung] = useState(false);
 	const [isOpenRegistrierung, setOpenRegistrierung] = useState(false);
 	const [isOpenMC, setOpenMC] = useState(false);
+	const [isOpenBUTP, setOpenBUTP] = useState(false);
+	const [isOpenKalender, setOpenKalender] = useState(false);
 
 	(function(w, d) { w.CollectId = "63a1d8d49eed8935fca50263"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);
+	
 	return (
 
 		<Layout>
@@ -63,6 +69,8 @@ export function MasonLayout({
 			<BuchungsDialog isOpen={isOpenBuchung} close={() => setOpenBuchung(false)} />
 			<RegistrierungsDialog isOpen={isOpenRegistrierung} close={() => setOpenRegistrierung(false)} />
 			<MCDialog isOpen={isOpenMC} close={() => setOpenMC(false)} />
+			<BUTPDialog isOpen={isOpenBUTP} close={() => setOpenBUTP(false)} />
+			<KalenderDialog isOpen={isOpenKalender} close={() => setOpenKalender(false)} />
 			<ScrollView
 				contentContainerStyle={{ width: '100%' }}
 				showsVerticalScrollIndicator={false}
@@ -204,7 +212,7 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
-						open={() => setOpenProfil(true)}
+						open={() => setOpenKalender(true)}
 						name="Kalender"
 						minH={250}
 						_box={{
@@ -257,8 +265,8 @@ export function MasonLayout({
 					/>
 					<StoryBook
 						navigation={navigation}
-						open={() => setOpenProfil(true)}
-						name="Werbung"
+						open={() => setOpenBUTP(true)}
+						name="BUTP"
 						minH={150}
 						_box={{
 							lightGrad: ['orange.400', 'amber.200'],
@@ -270,7 +278,7 @@ export function MasonLayout({
 					/>	
 					<StoryBook
 						navigation={navigation}
-						open={() => setOpenProfil(true)}
+						open={() => {Linking.openURL('https://www.rnz.de/')}}
 						name="News"
 						minH={50}
 						_box={{

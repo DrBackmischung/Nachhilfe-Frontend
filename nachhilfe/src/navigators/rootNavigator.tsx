@@ -6,7 +6,7 @@ const Stack = createStackNavigator();
 
 export function RootStack() {
 	return (
-		<Stack.Navigator initialRouteName="Kitchensink | NativeBase">
+		<Stack.Navigator initialRouteName="Nachhilfe">
 			<Stack.Screen
 				name="home"
 				component={Home}
@@ -22,7 +22,7 @@ export function RootStack() {
 				}}
 			/>
 			<Stack.Screen
-				name="Kitchensink | NativeBase"
+				name="Nachhilfe"
 				component={MasonLayout}
 				options={{
 					headerShown: false,

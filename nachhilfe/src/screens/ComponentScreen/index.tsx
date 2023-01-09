@@ -33,7 +33,7 @@ export function Examples({
 			title={component.title}
 			doclink={component.doclink}
 			navigation={navigation}
-			navigateTo="Kitchensink | NativeBase"
+			navigateTo="Nachhilfe"
 		>
 			{/* <Header title={component.title} navigation={navigation} /> */}
 

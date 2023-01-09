@@ -132,11 +132,11 @@ export const mapping = {
 		components: [
 		],
 	},
-	Werbung: {
-		title: 'Werbung',
+	BUTP: {
+		title: 'Bildungs- und Teilhabeprogramm',
 		description: '',
 		doclink: 'https://docs.nativebase.io/actionSheet',
-		basic: require('../components/tiles/Werbung'),
+		basic: require('../components/tiles/BUTP'),
 		components: [
 		],
 	},
