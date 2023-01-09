@@ -180,7 +180,7 @@ export const BuchungsDialog = (props: any) => {
                                                 <Heading size="xs">      </Heading>
                                                 <Heading size="xs">   Ort: {s.ort}</Heading>
                                                 <Heading size="xs">   Entfernung: {s.distanz}</Heading>
-                                                <Heading size="xs">   Preis: {s.preis}</Heading>
+                                                <Heading size="xs">   Preis: {s.preis}€</Heading>
                                                 <Center size="2" bg="primary.0"></Center>
                                                 <Button height="25px" onPress={() => {confirmBooking(s)}}>Buchen</Button>
                                             </Box>

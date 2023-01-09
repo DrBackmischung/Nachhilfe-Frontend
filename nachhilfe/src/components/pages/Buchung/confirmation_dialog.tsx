@@ -3,6 +3,8 @@ import { Alert, Avatar, Box, Button, Center, CheckIcon, FormControl, Heading, HS
 import { Line, Text } from 'react-native-svg';
 import { APIUrl } from '../../../../constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import { PayPalButtons } from '@paypal/react-paypal-js/dist/types/components/PayPalButtons';
 
 export const ConfirmationDialog = (props: any) => {
     const {isOpen, close, s, userId, trigger} = props
@@ -17,7 +19,7 @@ export const ConfirmationDialog = (props: any) => {
         });
     }, [isOpen])
 
-    const barzahlung = async () => {
+    const bezahlen = async (bezahlmethode) => {
 
         const url = `${APIUrl}/timeslots/${s.id}`;
         
@@ -33,7 +35,7 @@ export const ConfirmationDialog = (props: any) => {
                 uhrzeit: s.uhrzeit,
                 dauer: s.dauer,
                 preis: s.preis,
-                bezahlungErfolgt: '',
+                bezahlungErfolgt: bezahlmethode,
                 schuelerId: currentUser,
                 lehrerId: s.lehrerId,
                 distanz: s.distanz
@@ -87,15 +89,16 @@ export const ConfirmationDialog = (props: any) => {
             </Modal.Body>
             <Modal.Footer>
                 <Button flex="2" marginRight="5" onPress={() => {
-                    barzahlung();
+                    bezahlen("bar");
                     close(false);
                 }}>
-                    Barzahlung
+                    Barzahlung 
                 </Button>
                 <Button flex="2" marginRight="5" onPress={() => {
+                    bezahlen("butp");
                     close(false);
                 }}>
-                    Paypal
+                    Bezahlung über BuTP
                 </Button>
                 <Button flex="1" onPress={() => {
                     close(false);
