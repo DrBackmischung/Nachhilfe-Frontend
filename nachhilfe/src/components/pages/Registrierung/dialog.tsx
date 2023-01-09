@@ -116,12 +116,12 @@ export const RegistrierungsDialog = (props: any) => {
               `0`,
             );
             console.log(`${data[0].street} ${data[0].houseNr} ${data[0].zipCode} ${data[0].city}`)
+            toast.show({description: "Registriert als "+data[0].userName+"!"})
           } catch (error) {
             setIsError(true);
             setErrorMsg("Server Fehler, bitte erneut versuchen")
           }
           close(false)
-          toast.show({description: "Registriert als "+data[0].userName+"!"})
         }
     };
     

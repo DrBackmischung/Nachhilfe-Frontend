@@ -36,6 +36,7 @@ import { MCDialog } from '../../components/pages/Minecraft/dialog';
 import { Platform } from 'react-native';
 import { BUTPDialog } from '../../components/pages/BUTP/dialog';
 import { KalenderDialog } from '../../components/pages/Kalender/dialog';
+import { RechnungenDialog } from '../../components/pages/Rechnungen/dialog';
 
 export function MasonLayout({
 
@@ -54,6 +55,7 @@ export function MasonLayout({
 	const [isOpenMC, setOpenMC] = useState(false);
 	const [isOpenBUTP, setOpenBUTP] = useState(false);
 	const [isOpenKalender, setOpenKalender] = useState(false);
+	const [isOpenRechnungen, setOpenRechnungen] = useState(false);
 
 	(function(w, d) { w.CollectId = "63a1d8d49eed8935fca50263"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);
 	
@@ -71,6 +73,7 @@ export function MasonLayout({
 			<MCDialog isOpen={isOpenMC} close={() => setOpenMC(false)} />
 			<BUTPDialog isOpen={isOpenBUTP} close={() => setOpenBUTP(false)} />
 			<KalenderDialog isOpen={isOpenKalender} close={() => setOpenKalender(false)} />
+			<RechnungenDialog isOpen={isOpenRechnungen} close={() => setOpenRechnungen(false)} />
 			<ScrollView
 				contentContainerStyle={{ width: '100%' }}
 				showsVerticalScrollIndicator={false}
@@ -238,7 +241,7 @@ export function MasonLayout({
 					/>	
 					<StoryBook
 						navigation={navigation}
-						open={() => setOpenProfil(true)}
+						open={() => setOpenRechnungen(true)}
 						name="Rechnungen"
 						minH={250}
 						_box={{
